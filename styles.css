@@ -1,0 +1,87 @@
+:root
+{
+
+}
+* {
+    box-sizing: border-box;
+}
+body, html
+{
+    margin: 0;
+}
+
+.selection
+{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    table-layout: fixed ;
+    text-align: center;
+    border-collapse: collapse;
+    font: 500 20px Helvetica, serif
+}
+.selection td
+{
+    width: 1fr;
+    border: 3px solid orange;
+    border-top: none;
+    margin: 0;
+}
+.selection td:hover
+{
+    background-color: lightgray;
+    cursor:pointer;
+}
+
+.servislogo{grid-area: servis;
+    height: 10vh; display: block;margin-left: auto;margin-right: auto;}
+.boselogo{grid-area: bose;
+    width: 50%; display: block;margin-left: auto;margin-right: auto;}
+.pioneerlogo{grid-area: pioneer;
+    width: 50%; display: block;margin-left: auto;margin-right: auto;}
+.numarklogo{grid-area: numark;
+    width: 50%; display: block;margin-left: auto;margin-right: auto;}
+.clarionlogo{grid-area: clarion;
+    width: 50%; display: block;margin-left: auto;margin-right: auto;}
+.yamahalogo{grid-area: yamaha;
+    width: 50%; display: block;margin-left: auto;margin-right: auto;}
+
+.slideshow
+{
+    position: relative;
+    top: 20vh;
+    width: 100%;
+}
+.slideimg
+{
+    display: none;
+}
+
+.maincontainer
+{
+    position: relative;
+    width: 100%;
+    background-color: white;
+    top:30vh;
+    height: 70vh;
+    border: orange solid 3px;
+    border-collapse: collapse;
+    margin-top: 2vh;
+}
+
+.maincontent {grid-area: maincontent;}
+.content1 {grid-area: content1;}
+.content2 {grid-area: content2;}
+.content
+{
+    font-family: Verdana, serif;
+    width: 100%;
+    height: 100%;
+    padding-top: 5vh;
+    text-align: center;
+    display: inline-grid;
+    grid-template-areas:
+        'maincontent maincontent'
+        'content1 content2';
+}
