@@ -14,13 +14,21 @@
         <tbody>
         <tr>
             <td onclick="pocetna()" style="width: 15%"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></td>
-            <td onclick="pocetna()" style="background-color: lightgray;">Početna</td>
+            <td onclick="pocetna()">Početna</td>
             <td onclick="cjenik()">Cjenik</td>
-            <td onclick="shop()">Web Shop</td>
+            <td onclick="shop()" style="background-color: lightgray;">Web Shop</td>
         </tr>
         </tbody>
     </table>
 </div>
+<?php
+include 'webshop.php';
+$conn = OpenCon();
+echo "<p style='position: relative;top:15vh;'>Connected Successfully</p>";
+CloseCon($conn);
+?>
+<div class="okvirgrid">
 
+</div>
 </body>
 </html>

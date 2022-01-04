@@ -9,17 +9,20 @@ body, html
 {
     margin: 0;
 }
-
+/*
+Navigacijski menu
+*/
 .selection
 {
     z-index: 10;
     position: absolute;
     width: 100%;
+    top:0;
     background-color: white;
-    table-layout: fixed ;
+    table-layout: fixed;
     text-align: center;
     border-collapse: collapse;
-    font: 500 20px Helvetica, serif
+    font: 500 20px Helvetica, serif;
 }
 .selection td
 {
@@ -33,9 +36,14 @@ body, html
     background-color: lightgray;
     cursor:pointer;
 }
-
+/*
+Početak CSS za INDEX stranicu
+*/
+/*
+Namještava veličinu slika i centrira ih
+*/
 .servislogo{grid-area: servis;
-    height: 10vh; display: block;margin-left: auto;margin-right: auto;}
+    width:50%; display: block;margin-left: auto;margin-right: auto;}
 .boselogo{grid-area: bose;
     width: 50%; display: block;margin-left: auto;margin-right: auto;}
 .pioneerlogo{grid-area: pioneer;
@@ -46,7 +54,9 @@ body, html
     width: 50%; display: block;margin-left: auto;margin-right: auto;}
 .yamahalogo{grid-area: yamaha;
     width: 50%; display: block;margin-left: auto;margin-right: auto;}
-
+/*
+Pozicionira element za slideshow kojeg će JavaScript aktivirati
+*/
 .slideshow
 {
     position: relative;
@@ -56,8 +66,19 @@ body, html
 .slideimg
 {
     display: none;
+    animation-name: fade;
+    animation-duration: 1s;
 }
-
+/*
+Animacija ulaska slika
+*/
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 100%;}
+}
+/*
+Svojstva glavnog teksta index stranice
+*/
 .maincontainer
 {
     position: relative;
@@ -69,10 +90,15 @@ body, html
     border-collapse: collapse;
     margin-top: 2vh;
 }
-
+/*
+Imenovanje imena elementa u rešetci
+*/
 .maincontent {grid-area: maincontent;}
 .content1 {grid-area: content1;}
 .content2 {grid-area: content2;}
+/*
+Postavljanje rešetke i definiranje svojstva za tekst unutar elemenata
+*/
 .content
 {
     font-family: Verdana, serif;
@@ -84,4 +110,64 @@ body, html
     grid-template-areas:
         'maincontent maincontent'
         'content1 content2';
+}
+/*
+Kraj CSS za INDEX stranicu
+*/
+
+/*
+Početak CSS za CJENIK stranicu
+*/
+.uvod
+{
+    position: relative;
+    top: 20vh;
+    width: 60%;
+    left: 20%;
+    text-align: center;
+    font: 500 20px Helvetica, serif
+}
+.soundbar {grid-area: img1;}
+.tablicacijena {grid-area: table;}
+.pmixer {grid-area: img2;}
+.cijene
+{
+    display: inline-grid;
+    width: 100%;
+    position: relative;
+    top:30vh;
+    text-align: center;
+    border: solid 5px orange;
+    border-left: none;
+    border-right: none;
+    grid-template-areas: 'img1 table img2';
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.tablicacijena
+{
+    border: solid 5px orange;
+    border-collapse: collapse;
+    border-top: none;
+    border-bottom: none;
+    font-family: Verdana, serif;
+}
+.tablicacijena td,th
+{
+    padding: 20px 3vw 20px 3vw;
+    border-top: orange solid 5px;
+}
+/*
+Kraj CSS za CJENIK stranicu
+*/
+/*
+Početak CSS za WEBSHOP stranicu
+*/
+.okvirgrid
+{
+    border: 5px solid orange;
+    position: relative;
+    top:15vh;
 }
