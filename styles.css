@@ -8,6 +8,7 @@
 body, html
 {
     margin: 0;
+    scroll-behavior: smooth;
 }
 /*
 Navigacijski menu
@@ -165,9 +166,73 @@ Kraj CSS za CJENIK stranicu
 /*
 Početak CSS za WEBSHOP stranicu
 */
+.filters{grid-area: filters;}
+.navig{grid-area: navig;}
+.okvirgrid{grid-area: okvirgrid;}
+.item1{grid-area: item1;}
+.item2{grid-area: item2;}
+.item3{grid-area: item3;}
+.item4{grid-area: item4;}
+.item5{grid-area: item5;}
+.item6{grid-area: item6;}
+.item7{grid-area: item7;}
+.item8{grid-area: item8;}
+.item9{grid-area: item9;}
+.okvirshop {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    top: 15vh;
+    display: inline-grid;
+    grid-template-columns: 1fr 0.9fr 0.9fr 0.9fr;
+    grid-template-areas:
+    'filters navig navig navig'
+    'filters okvirgrid okvirgrid okvirgrid'
+    'filters okvirgrid okvirgrid okvirgrid'
+    'filters okvirgrid okvirgrid okvirgrid';
+}
+
+.sidebyside
+{
+    display: inline-block;
+}
+.pretrazi
+{
+    display: flex;
+    justify-content: center;
+}
 .okvirgrid
 {
-    border: 5px solid orange;
-    position: relative;
-    top:15vh;
+    display: grid;
+    grid-template-areas:
+    'item1 item2 item3'
+    'item4 item5 item6'
+    'item7 item8 item9';
 }
+.okvirshop > div
+{
+    border: 5px solid orange;
+    border-collapse: collapse;
+    width: 1fr;
+    padding: 20px;
+}
+.item
+{
+    width: 100%;
+    box-shadow: -5px 5px 5px gray;
+}
+.item p
+{
+    margin-left: 3%;
+    padding-bottom: 1%;
+}
+.item h2
+{
+    margin-left: 3%;
+}
+.item img
+{
+    width: 100%;
+}
+
+
