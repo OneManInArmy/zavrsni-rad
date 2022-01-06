@@ -1,8 +1,8 @@
 function pocetna() {
-    location.replace("index.html")
+    location.replace("index.php")
 }
 function cjenik() {
-    location.replace("cjenik.html")
+    location.replace("cjenik.php")
 }
 function shop() {
     location.replace("webshopsite.php")

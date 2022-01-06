@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="day2">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="day3&#10;Unnecessarily complex - Too much time">
+      <change afterPath="$PROJECT_DIR$/cjenik.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cjenik.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webshopsite.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshopsite.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +63,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -78,7 +79,11 @@
       <workItem from="1641217285897" duration="19325000" />
       <workItem from="1641239578201" duration="12000" />
       <workItem from="1641300947850" duration="8751000" />
-      <workItem from="1641402122663" duration="17600000" />
+      <workItem from="1641402122663" duration="17856000" />
+      <workItem from="1641420711936" duration="79000" />
+      <workItem from="1641421534639" duration="132000" />
+      <workItem from="1641421682855" duration="163000" />
+      <workItem from="1641480424719" duration="10440000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -94,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641315801618</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="day3&#10;Unnecessarily complex - Too much time">
+      <created>1641420059236</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641420059236</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +140,8 @@
     <option name="LIMIT_HISTORY" value="false" />
     <MESSAGE value="day1" />
     <MESSAGE value="day2" />
-    <option name="LAST_COMMIT_MESSAGE" value="day2" />
+    <MESSAGE value="day3&#10;Unnecessarily complex - Too much time" />
+    <option name="LAST_COMMIT_MESSAGE" value="day3&#10;Unnecessarily complex - Too much time" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

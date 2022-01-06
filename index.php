@@ -9,6 +9,11 @@
     <title>RTV-Servis Marušić</title>
 </head>
 <body>
+<?php
+include 'webshop.php';
+$conn=OpenCon();
+session_unset();
+?>
 <div>
     <table class="selection">
         <tbody>
@@ -51,6 +56,8 @@
             </div>
         </div>
     </div>
-
+<?php
+CloseCon($conn);
+?>
 </body>
 </html>

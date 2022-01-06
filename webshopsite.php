@@ -9,6 +9,11 @@
     <title>RTV-Servis Marušić Web Shop</title>
 </head>
 <body>
+<?php
+session_start();
+include 'webshop.php';
+$conn=OpenCon();
+?>
 <div>
     <table class="selection">
         <tbody>
@@ -21,24 +26,6 @@
         </tbody>
     </table>
 </div>
-<?php
-include 'webshop.php';
-$conn = OpenCon();
-$sql = "SELECT * FROM `uređaj` WHERE 1";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-    $Ime=$row["Ime"];
-    $Slika=$row["Slika"];
-    $Cijena=$row["Cijena"];
-    $Opis=$row["Opis"];
-    }
-} else {
-    echo "<script>alert('Nešto je krivo sa bazom podataka!')</script>";
-}
-CloseCon($conn);
-?>
 <div class="okvirshop">
     <div class="filters">
         <div class="trazilica">
@@ -56,21 +43,20 @@ CloseCon($conn);
             <form>
                 <h2>Traži po cijeni</h2>
                 <p class="sidebyside">Od</p>
-                <input type="number" id="mincijena" class="sidebyside">
+                <label for="mincijena"></label><input type="number" id="mincijena" class="sidebyside">
                 <p class="sidebyside">Do</p>
-                <input type="number" id="maxcijena" class="sidebyside">
+                <label for="maxcijena"></label><input type="number" id="maxcijena" class="sidebyside">
             </form>
         </div>
         <br>
         <div class="izborpro">
             <?php
-            $conn = OpenCon();
-            $stmt = $conn->prepare("SELECT * FROM `uređaj` WHERE 1");
+            $stmt = $conn->prepare("SELECT DISTINCT Proizvođač FROM `uređaj` WHERE 1");
             $stmt->execute();
             $array = [];
             foreach ($stmt->get_result() as $row)
             {
-                $array[] = $row['Proizvodac'];
+                $array[] = $row['Proizvođač'];
             }
             $len=sizeof($array);
             for ($x = 0; $x < $len; $x++) {
@@ -81,7 +67,6 @@ CloseCon($conn);
                         ';
                 echo $element;
             }
-            CloseCon($conn);
             ?>
 
         </div>
@@ -92,82 +77,90 @@ CloseCon($conn);
 
     </div>
     <div class="navig">
+        <?php
+        $stmt = $conn->prepare("SELECT * FROM `uređaj` WHERE 1;");
+        $stmt->execute();
+        $brojred = mysqli_num_rows($stmt->get_result());
+        $brojstr = $brojred%9;
+        $sadstr=1;
+        if(isset($_SESSION['sadstr']))
+            $sadstr = $_SESSION['sadstr'];
 
+        ?>
+        <form action="" method="post">
+            <?php
+            if (isset($_POST["navbutton"]))
+            {
+                if($_POST["navbutton"]=="<<-" && $sadstr!=1)
+                {
+                    $sadstr=$sadstr-1;
+                    $_SESSION['sadstr'] = $sadstr;
+                }
+                else if($_POST["navbutton"]=="->>" && $sadstr!=$brojstr)
+                {
+                    $sadstr=$sadstr+1;
+                    $_SESSION['sadstr'] = $sadstr;
+                }
+                else if($_POST["navbutton"]=="...")
+                {
+                    $sadstr=$sadstr;
+                    $_SESSION['sadstr'] = $sadstr;
+                }
+                else
+                {
+                    if($_POST["navbutton"]=="<<-")
+                    {
+                        $sadstr=1;
+                        $_SESSION['sadstr'] = $sadstr;
+                    }
+                    else if($_POST["navbutton"]=="->>")
+                    {
+                        $sadstr=$brojstr;
+                        $_SESSION['sadstr'] = $sadstr;
+                    }
+                    else
+                    {
+                        $sadstr=$_POST["navbutton"];
+                        $_SESSION['sadstr'] = $sadstr;
+                    }
+                }
+            }
+            ?>
+            <input type="submit" name="navbutton" value="<<-">
+            <input type="submit" name="navbutton" value="<?php
+            if($sadstr==1)
+            {
+                echo "...";
+            }
+            else echo $sadstr-1;
+            ?>">
+            <input type="submit" name="navbutton" value="<?php echo $sadstr ?>">
+            <input type="submit" name="navbutton" value="<?php
+            if($sadstr==$brojstr)
+            {
+                echo "...";
+            }
+            else echo $sadstr+1 ?>">
+            <input type="submit" name="navbutton" value="->>">
+        </form>
     </div>
     <div class="okvirgrid">
-        <div class="item1">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
-        <div class="item2">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
-        <div class="item3">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
-        <div class="item4">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
-        <div class="item5">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
-        <div class="item6">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
-        <div class="item7">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
-        <div class="item8">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
-        <div class="item9">
-            <div class="item">
-                <img src="<?php echo $Slika ?>" alt="Slika 1. uređaja">
-                <h2><?php echo $Ime ?></h2>
-                <h2><?php echo $Cijena ?></h2>
-                <p><?php echo $Opis ?></p>
-            </div>
-        </div>
+        <?php
+        if($sadstr==1) {
+            $stmt = $conn->prepare("SELECT * FROM `uređaj` WHERE 1 LIMIT 9; ");
+        }
+        else
+        {
+            $rangestart=($sadstr-1)*9;
+            $stmt = $conn->prepare("SELECT * FROM `uređaj` WHERE 1 LIMIT $rangestart,9");
+        }
+        $stmt->execute();
+        IspisGrid($stmt);
+        ?>
     </div>
 </div>
+<?php
+CloseCon($conn);
+?>
 </body>
 </html>
