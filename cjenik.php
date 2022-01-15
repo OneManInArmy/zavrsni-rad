@@ -10,18 +10,17 @@
 </head>
 <body>
 <?php
-include 'webshop.php';
+include 'functions.php';
 $conn=OpenCon();
-session_unset();
 ?>
     <div>
         <table class="selection">
             <tbody>
             <tr>
-                <td onclick="pocetna()" style="width: 15%"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></td>
-                <td onclick="pocetna()">Početna</td>
-                <td onclick="cjenik()"  style="background-color: lightgray;">Cjenik</td>
-                <td onclick="shop()">Web Shop</td>
+                <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
+                <td><a href="index.php">Početna</a></td>
+                <td style="background-color: lightgray;"><a href="cjenik.php">Cjenik</a></td>
+                <td><a href="webshopsite.php">Web Shop</a></td>
             </tr>
             </tbody>
         </table>

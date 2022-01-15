@@ -11,17 +11,17 @@
 <body>
 <?php
 session_start();
-include 'webshop.php';
+include 'functions.php';
 $conn=OpenCon();
 ?>
 <div>
     <table class="selection">
         <tbody>
         <tr>
-            <td onclick="pocetna()" style="width: 15%"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></td>
-            <td onclick="pocetna()">Početna</td>
-            <td onclick="cjenik()">Cjenik</td>
-            <td onclick="shop()" style="background-color: lightgray;">Web Shop</td>
+            <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
+            <td><a href="index.php">Početna</a></td>
+            <td><a href="cjenik.php">Cjenik</a></td>
+            <td style="background-color: lightgray;"><a href="webshopsite.php">Web Shop</a></td>
         </tr>
         </tbody>
     </table>
@@ -81,11 +81,10 @@ $conn=OpenCon();
         $stmt = $conn->prepare("SELECT * FROM `uređaj` WHERE 1;");
         $stmt->execute();
         $brojred = mysqli_num_rows($stmt->get_result());
-        $brojstr = $brojred%9;
+        $brojstr = ceil($brojred/9);
         $sadstr=1;
         if(isset($_SESSION['sadstr']))
             $sadstr = $_SESSION['sadstr'];
-
         ?>
         <form action="" method="post">
             <?php

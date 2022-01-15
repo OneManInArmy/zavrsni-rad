@@ -1,12 +1,3 @@
-function pocetna() {
-    location.replace("index.php")
-}
-function cjenik() {
-    location.replace("cjenik.php")
-}
-function shop() {
-    location.replace("webshopsite.php")
-}
 var broj = 0;
 function vrti() {
     var i;
