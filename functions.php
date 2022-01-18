@@ -1,3 +1,4 @@
+
 <?php
 function OpenCon()
 {
@@ -28,17 +29,35 @@ function IspisGrid($stmt)
         echo
             '
             <div class="item'.$x.'">
-                <div class="item">
-                    <img src="'.$Slika.'" alt="Slika '.$x.'. uređaja">
-                    <hr>
-                    <h2>'.$Ime.'</h2>
-                    <h2>'.$Cijena.' kn</h2>
-                    <p>'.$Opis.'</p>
-                </div>
+                    <div class="item">
+                        <a href="product.php?hello=true">
+                            <img src="'.$Slika.'" alt="Slika '.$x.'. uređaja">
+                        </a>
+                        <hr>
+                        <a href="product.php?prod='.$Ime.'">
+                            <h2>'.$Ime.'</h2>
+                            <h2>'.$Cijena.' kn</h2>
+                            <p>'.$Opis.'</p>
+                        </a>
+                    </div>
             </div>
            ';
         $x++;
     }
+}
+
+function IspisProduct($Ime, $Cijena, $Opis, $Slika)
+{
+    echo
+    "
+    <div>
+        <img src=".$Slika." alt=".$Ime.">
+        <h1>$Ime</h1>
+        <p>$Cijena</p>
+        <p>$Opis</p>
+        
+    </div>
+    ";
 }
 
 ?>

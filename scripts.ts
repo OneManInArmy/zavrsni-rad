@@ -43,3 +43,4 @@ function fillColor(){
     percent2 = (sliderTwo.value / sliderMaxValue) * 100;
     sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
 }
+
