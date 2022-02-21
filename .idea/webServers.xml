@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="f3db1782-b332-42b7-9b75-6250189b02d9" name="XAMPP" url="http://localhost">
-        <fileTransfer mountedRoot="E:\XAMPP\htdocs" accessType="MOUNT" port="0" />
+      <webServer id="4130a924-7130-465a-900b-8ae736309fad" name="localhost" url="http://localhost/zavrsni">
+        <fileTransfer mountedRoot="$PROJECT_DIR$" accessType="MOUNT" port="0" />
       </webServer>
     </option>
   </component>

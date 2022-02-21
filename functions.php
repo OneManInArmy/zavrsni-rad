@@ -3,9 +3,9 @@
 function OpenCon()
 {
     $dbhost = "localhost";
-    $dbuser = "Leo";
+    $dbuser = "root";
     $dbpass = ".Nhc{Y[\/8y5;j\%TKjB";
-    $db = "rtv-servis marušić shop";
+    $db = "ServisMarusic";
     $conn = new mysqli($dbhost, $dbuser, $dbpass,$db)
     or die("Connect failed: %s\n". $conn -> error);
 
@@ -44,20 +44,6 @@ function IspisGrid($stmt)
            ';
         $x++;
     }
-}
-
-function IspisProduct($Ime, $Cijena, $Opis, $Slika)
-{
-    echo
-    "
-    <div>
-        <img src=".$Slika." alt=".$Ime.">
-        <h1>$Ime</h1>
-        <p>$Cijena</p>
-        <p>$Opis</p>
-        
-    </div>
-    ";
 }
 
 ?>

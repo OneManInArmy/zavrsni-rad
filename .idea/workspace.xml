@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="bugfix and replacing links for pages">
-      <change afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Transfering values when clicking on items in the shop now works - FINALLY! My  brain fried...">
+      <change afterPath="$PROJECT_DIR$/ServisMarusic.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/zavrsni.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zavrsni.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cjenik.php" beforeDir="false" afterPath="$PROJECT_DIR$/cjenik.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webshopsite.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +53,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/functions.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/styles.css" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,13 +74,15 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -83,7 +106,14 @@
       <workItem from="1641565199278" duration="167000" />
       <workItem from="1641565684134" duration="848000" />
       <workItem from="1642257056815" duration="993000" />
-      <workItem from="1642528810847" duration="4917000" />
+      <workItem from="1642528810847" duration="5046000" />
+      <workItem from="1642589758325" duration="34000" />
+      <workItem from="1643378163920" duration="4568000" />
+      <workItem from="1643813652856" duration="24000" />
+      <workItem from="1643818062035" duration="4000" />
+      <workItem from="1644950445747" duration="8000" />
+      <workItem from="1644952196597" duration="11000" />
+      <workItem from="1645464836358" duration="3197000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -120,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642258022788</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Transfering values when clicking on items in the shop now works - FINALLY! My  brain fried...">
+      <created>1642533879494</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642533879494</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +195,8 @@
     <MESSAGE value="day4" />
     <MESSAGE value="day4&#10;Session values are not resseting, files changing colors for some reason, switching pages with javascript returns previous values" />
     <MESSAGE value="bugfix and replacing links for pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix and replacing links for pages" />
+    <MESSAGE value="Transfering values when clicking on items in the shop now works - FINALLY! My  brain fried..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Transfering values when clicking on items in the shop now works - FINALLY! My  brain fried..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

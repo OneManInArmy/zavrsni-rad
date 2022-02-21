@@ -249,4 +249,34 @@ Kraj CSS za WEBSHOP stranicu
 /*
 Početak CSS za PRODUCT stranicu
  */
+.picture{grid-area: picture;
+    padding: 1%;
+}
+.name{grid-area: name;
+    padding: 1%;
+}
+.description{grid-area: description;
+    padding: 1%;
+}
+.price{grid-area: price;
+    padding: 1%;
+}
+.contact{grid-area: contact;
+    padding: 1%;
+}
+.prodbox
+{
+    position: relative;
+    top:20vh;
+    width:80%;
+    left:10%;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'name name name'
+    'picture price contact'
+    'picture description description';
+    grid-gap: 25px;
+    border: 1px orange solid;
+}
 
