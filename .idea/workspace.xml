@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Transfering values when clicking on items in the shop now works - FINALLY! My  brain fried...">
+    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Making the product page nicer">
       <change afterPath="$PROJECT_DIR$/ServisMarusic.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
@@ -113,7 +113,7 @@
       <workItem from="1643818062035" duration="4000" />
       <workItem from="1644950445747" duration="8000" />
       <workItem from="1644952196597" duration="11000" />
-      <workItem from="1645464836358" duration="3197000" />
+      <workItem from="1645464836358" duration="3558000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -157,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642533879494</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Making the product page nicer">
+      <created>1645468387588</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645468387589</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +203,8 @@
     <MESSAGE value="day4&#10;Session values are not resseting, files changing colors for some reason, switching pages with javascript returns previous values" />
     <MESSAGE value="bugfix and replacing links for pages" />
     <MESSAGE value="Transfering values when clicking on items in the shop now works - FINALLY! My  brain fried..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Transfering values when clicking on items in the shop now works - FINALLY! My  brain fried..." />
+    <MESSAGE value="Making the product page nicer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Making the product page nicer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
