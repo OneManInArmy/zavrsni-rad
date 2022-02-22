@@ -30,7 +30,7 @@ function IspisGrid($stmt)
             '
             <div class="item'.$x.'">
                     <div class="item">
-                        <a href="product.php?hello=true">
+                        <a href="product.php?prod='.$Ime.'">
                             <img src="'.$Slika.'" alt="Slika '.$x.'. uređaja">
                         </a>
                         <hr>

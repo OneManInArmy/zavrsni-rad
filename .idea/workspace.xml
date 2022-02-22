@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Making the product page nicer">
-      <change afterPath="$PROJECT_DIR$/ServisMarusic.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/zavrsni.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zavrsni.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cjenik.php" beforeDir="false" afterPath="$PROJECT_DIR$/cjenik.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webshopsite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +99,8 @@
       <workItem from="1643818062035" duration="4000" />
       <workItem from="1644950445747" duration="8000" />
       <workItem from="1644952196597" duration="11000" />
-      <workItem from="1645464836358" duration="3558000" />
+      <workItem from="1645464836358" duration="3629000" />
+      <workItem from="1645554704898" duration="7953000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -164,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645468387589</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Making the product page nicer">
+      <created>1645468448985</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645468448985</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

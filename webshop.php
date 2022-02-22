@@ -31,30 +31,28 @@ $conn=OpenCon();
         <div class="trazilica">
             <h2>Traži po imenu</h2>
             <div class="search-container">
-                <form action="/action_page.php">
-                    <label>
-                        <input type="text" placeholder="Ime uređaja.." name="search">
-                    </label>
+                <form method="post">
+                        <input type="text" placeholder="Ime uređaja.." id="search" name="search">
                 </form>
             </div>
         </div>
         <br>
         <div class="cijena">
-            <form>
+            <form method="post">
                 <h2>Traži po cijeni</h2>
                 <p class="sidebyside">Od</p>
-                <label for="mincijena"></label><input type="number" id="mincijena" class="sidebyside">
+                <label for="mincijena"></label><input type="number" name="mincijena" id="mincijena" class="sidebyside">
                 <p class="sidebyside">Do</p>
-                <label for="maxcijena"></label><input type="number" id="maxcijena" class="sidebyside">
+                <label for="maxcijena"></label><input type="number" name="maxcijena" id="maxcijena" class="sidebyside">
             </form>
         </div>
         <br>
         <div class="izborpro">
             <?php
-            $stmt = $conn->prepare("SELECT DISTINCT Proizvodac FROM `proizvod` WHERE 1");
-            $stmt->execute();
+            $prod = $conn->prepare("SELECT DISTINCT Proizvodac FROM `proizvod` WHERE 1");
+            $prod->execute();
             $array = [];
-            foreach ($stmt->get_result() as $row)
+            foreach ($prod->get_result() as $row)
             {
                 $array[] = $row['Proizvodac'];
             }
@@ -62,9 +60,10 @@ $conn=OpenCon();
             for ($x = 0; $x < $len; $x++) {
                 $element =
                     '
-                        <input type="checkbox" id="' . $array[$x] . '" name="' . $array[$x] . '" value="' . $array[$x] . '">
-                        <label for="">' . $array[$x] . '</label><br>
-                        ';
+                    <form method="post">
+                        <input type="checkbox" id="' . $array[$x] . '" name="proizvodac[]" value="' . $array[$x] . '">
+                        <label for="' . $array[$x] . '">' . $array[$x] . '</label><br>
+                    </form>';
                 echo $element;
             }
             ?>
@@ -72,15 +71,46 @@ $conn=OpenCon();
         </div>
         <br>
         <div class="pretrazi">
-            <button type="submit">Pretraži</button>
+            <form method="post" action="">
+                <input type="submit" id="pretrazi" name="pretrazi" value="Pretraži">
+            </form>
         </div>
+        <?php
+        $filters=0;
+        if(array_key_exists('pretrazi',$_POST))
+        {
+            /*if(isset($_POST["search"])){
+                $filters=1;
+                $serime=$_POST["search"];
+                echo $serime;
+            }
+            if(isset($_POST["mincijena"]))
+            {
+                $filters=1;
+                $sermincijena=$_POST["mincijena"];
+                echo $sermincijena;
+            }
+            if(isset($_POST["maxcijena"]))
+            {
+                $filters=1;
+                $sermaxcijena=$_POST["maxcijena"];
+                echo $sermaxcijena;
+            }
+            if(!empty($_POST['proizvodac'])) {
+                foreach($_POST['proizvodac'] as $value){
+                    echo "Prodavac : ".$value.'<br/>';}
+            }*/
+            $serime=$_POST['search'];
+            header("location: webshop.php?ser='.$serime.'");
+        }
+        ?>
 
     </div>
     <div class="navig">
         <?php
-        $stmt = $conn->prepare("SELECT * FROM `proizvod` WHERE 1;");
-        $stmt->execute();
-        $brojred = mysqli_num_rows($stmt->get_result());
+        $navig = $conn->prepare("SELECT * FROM `proizvod` WHERE 1;");
+        $navig->execute();
+        $brojred = mysqli_num_rows($navig->get_result());
         $brojstr = ceil($brojred/9);
         $sadstr=1;
         if(isset($_SESSION['sadstr']))
@@ -145,12 +175,8 @@ $conn=OpenCon();
     </div>
     <div class="okvirgrid">
         <?php
-        if($sadstr==1) {
-            $stmt = $conn->prepare("SELECT * FROM `proizvod` WHERE 1 LIMIT 9; ");
-        }
-        else
-        {
-            $rangestart=($sadstr-1)*9;
+        $rangestart=($sadstr-1)*9;
+        if($filters==0) {
             $stmt = $conn->prepare("SELECT * FROM `proizvod` WHERE 1 LIMIT $rangestart,9");
         }
         $stmt->execute();
