@@ -45,5 +45,49 @@ function IspisGrid($stmt)
         $x++;
     }
 }
+function MakeQuery(): string
+{
+    if(isset($_POST["search"])){
+        $filters=1;
+        $serime=$_POST["search"];
+        if($serime==null)
+        {
+            $sql[] = " Ime LIKE '%' ";
+        }
+        else $sql[] = " Ime LIKE '$serime' ";
+    }
+    if(isset($_POST["mincijena"]))
+    {
+        $filters=1;
+        $sermincijena=$_POST["mincijena"];
+        if($sermincijena==null)
+        {
+            $sql[] = " Cijena BETWEEN 0 ";
+        }
+        else $sql[] = " Cijena BETWEEN $sermincijena ";
+    }
+    if(isset($_POST["maxcijena"]))
+    {
+        $filters=1;
+        $sermaxcijena=$_POST["maxcijena"];
+        if($sermaxcijena==null)
+        {
+            $sql[] = " 9999999999999999 ";
+        }
+        else $sql[] = " $sermaxcijena ";
+    }
+    if(!empty($_POST['proizvodac'])) {
+        foreach($_POST['proizvodac'] as $value){
+            $sqlpro[] = " '$value' ";}
+    }
+    if (!empty($sql)) {
+        $query =null;
+        if (empty($sqlpro)) {
+            $sqlpro[] = " SELECT Proizvodac FROM proizvod ";
+        }
+        $query .= 'SELECT * FROM proizvod WHERE ' . implode(' AND ', $sql) . 'AND Proizvodac IN (' . implode(' , ',$sqlpro) . ')';
+    }
+    return $query;
+}
 
 ?>

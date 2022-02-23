@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf8_croatian_ci">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="slike/servislogo.png">
@@ -28,87 +28,105 @@ $conn=OpenCon();
 </div>
 <div class="okvirshop">
     <div class="filters">
-        <div class="trazilica">
-            <h2>Traži po imenu</h2>
-            <div class="search-container">
-                <form method="post">
-                        <input type="text" placeholder="Ime uređaja.." id="search" name="search">
-                </form>
+        <form method="post" action="">
+            <div class="trazilica">
+                <h2>Traži po imenu</h2>
+                <div class="search-container">
+                        <label for="search"></label><input type="text" placeholder="Ime uređaja..." id="search" name="search">
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="cijena">
-            <form method="post">
-                <h2>Traži po cijeni</h2>
-                <p class="sidebyside">Od</p>
-                <label for="mincijena"></label><input type="number" name="mincijena" id="mincijena" class="sidebyside">
-                <p class="sidebyside">Do</p>
-                <label for="maxcijena"></label><input type="number" name="maxcijena" id="maxcijena" class="sidebyside">
-            </form>
-        </div>
-        <br>
-        <div class="izborpro">
-            <?php
-            $prod = $conn->prepare("SELECT DISTINCT Proizvodac FROM `proizvod` WHERE 1");
-            $prod->execute();
-            $array = [];
-            foreach ($prod->get_result() as $row)
-            {
-                $array[] = $row['Proizvodac'];
-            }
-            $len=sizeof($array);
-            for ($x = 0; $x < $len; $x++) {
-                $element =
-                    '
-                    <form method="post">
-                        <input type="checkbox" id="' . $array[$x] . '" name="proizvodac[]" value="' . $array[$x] . '">
-                        <label for="' . $array[$x] . '">' . $array[$x] . '</label><br>
-                    </form>';
-                echo $element;
-            }
-            ?>
-
-        </div>
-        <br>
-        <div class="pretrazi">
-            <form method="post" action="">
-                <input type="submit" id="pretrazi" name="pretrazi" value="Pretraži">
-            </form>
-        </div>
+            <br>
+            <div class="cijena">
+                    <h2>Traži po cijeni</h2>
+                    <p class="sidebyside">Od</p>
+                    <label for="mincijena"></label><input type="number" min="0" name="mincijena" id="mincijena" class="sidebyside">
+                    <p class="sidebyside">Do</p>
+                    <label for="maxcijena"></label><input type="number" min="0" name="maxcijena" id="maxcijena" class="sidebyside">
+            </div>
+            <br>
+            <div class="izborpro">
+                <?php
+                $prod = $conn->prepare("SELECT DISTINCT Proizvodac FROM `proizvod` WHERE 1");
+                $prod->execute();
+                $array = [];
+                foreach ($prod->get_result() as $row)
+                {
+                    $array[] = $row['Proizvodac'];
+                }
+                $len=sizeof($array);
+                for ($x = 0; $x < $len; $x++) {
+                    $element =
+                        '
+                            <input type="checkbox" id="' . $array[$x] . '" name="proizvodac[]" value="' . $array[$x] . '">
+                            <label for="' . $array[$x] . '">' . $array[$x] . '</label><br>
+                        ';
+                    echo $element;
+                }
+                ?>
+            </div>
+            <br>
+            <div class="pretrazi">
+                    <input type="submit" id="pretrazi" name="pretrazi" value="Pretraži">
+            </div>
+        </form>
         <?php
         $filters=0;
-        if(array_key_exists('pretrazi',$_POST))
+        if(isset($_POST["pretrazi"]))
         {
-            /*if(isset($_POST["search"])){
+            if(isset($_POST["search"])){
                 $filters=1;
                 $serime=$_POST["search"];
-                echo $serime;
+                if($serime==null)
+                {
+                    $sql[] = " Ime LIKE '%' ";
+                }
+                else $sql[] = " Ime LIKE '%$serime%' ";
             }
             if(isset($_POST["mincijena"]))
             {
                 $filters=1;
                 $sermincijena=$_POST["mincijena"];
-                echo $sermincijena;
+                if($sermincijena==null)
+                {
+                    $sql[] = " Cijena BETWEEN 0 ";
+                }
+                else $sql[] = " Cijena BETWEEN $sermincijena ";
             }
             if(isset($_POST["maxcijena"]))
             {
                 $filters=1;
                 $sermaxcijena=$_POST["maxcijena"];
-                echo $sermaxcijena;
+                if($sermaxcijena==null)
+                {
+                    $sql[] = " 9999999999999999 ";
+                }
+                else $sql[] = " $sermaxcijena ";
             }
             if(!empty($_POST['proizvodac'])) {
+                $filters=1;
                 foreach($_POST['proizvodac'] as $value){
-                    echo "Prodavac : ".$value.'<br/>';}
-            }*/
-            $serime=$_POST['search'];
-            header("location: webshop.php?ser='.$serime.'");
+                    $sqlpro[] = " '$value' ";}
+            }
+            if (!empty($sql)) {
+                $query =null;
+                if (empty($sqlpro)) {
+                    $sqlpro[] = " SELECT Proizvodac FROM proizvod ";
+                }
+                $query .= 'SELECT * FROM proizvod WHERE ' . implode(' AND ', $sql) . 'AND Proizvodac IN (' . implode(' , ',$sqlpro) . ')';
+            }
+            $_SESSION['sadstr']=1;
+            echo $query;
         }
         ?>
-
     </div>
     <div class="navig">
         <?php
-        $navig = $conn->prepare("SELECT * FROM `proizvod` WHERE 1;");
+        if($filters==0) {
+            $navig = $conn->prepare("SELECT * FROM `proizvod` WHERE 1;");
+        }
+        else {
+            $navig = $conn->prepare($query);
+        }
         $navig->execute();
         $brojred = mysqli_num_rows($navig->get_result());
         $brojstr = ceil($brojred/9);
@@ -176,8 +194,12 @@ $conn=OpenCon();
     <div class="okvirgrid">
         <?php
         $rangestart=($sadstr-1)*9;
-        if($filters==0) {
+        if($filters==0){
             $stmt = $conn->prepare("SELECT * FROM `proizvod` WHERE 1 LIMIT $rangestart,9");
+        }
+        else {
+            $query .= ' LIMIT '.$rangestart.' , 9 ';
+            $stmt = $conn->prepare($query);
         }
         $stmt->execute();
         IspisGrid($stmt);
