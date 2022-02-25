@@ -3,6 +3,7 @@
 <?php
 include 'functions.php';
 $conn=OpenCon();
+SessionDestroy();
 ?>
 <head>
     <meta charset="utf8_croatian_ci">

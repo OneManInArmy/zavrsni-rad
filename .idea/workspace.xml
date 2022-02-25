@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Trying to add filters to shop search - failed">
+    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Filtering now works - need to fix when getting multiple pages on filters">
+      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webshop.php.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cjenik.php" beforeDir="false" afterPath="$PROJECT_DIR$/cjenik.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
@@ -51,7 +53,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="XAMPP PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1" />
   <component name="ProjectId" id="22sl4Dq3XdyKBue7Pu7FO2hR7zP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -71,7 +73,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -114,7 +116,9 @@
       <workItem from="1644952196597" duration="11000" />
       <workItem from="1645464836358" duration="3629000" />
       <workItem from="1645554704898" duration="8015000" />
-      <workItem from="1645628586845" duration="8774000" />
+      <workItem from="1645628586845" duration="8848000" />
+      <workItem from="1645717460607" duration="13334000" />
+      <workItem from="1645808743484" duration="9657000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -179,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645562790585</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Filtering now works - need to fix when getting multiple pages on filters">
+      <created>1645639613772</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1645639613772</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +231,8 @@
     <MESSAGE value="Transfering values when clicking on items in the shop now works - FINALLY! My  brain fried..." />
     <MESSAGE value="Making the product page nicer" />
     <MESSAGE value="Trying to add filters to shop search - failed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to add filters to shop search - failed" />
+    <MESSAGE value="Filtering now works - need to fix when getting multiple pages on filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filtering now works - need to fix when getting multiple pages on filters" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

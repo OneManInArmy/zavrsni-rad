@@ -13,6 +13,7 @@
 session_start();
 include 'functions.php';
 $conn=OpenCon();
+$page = $_GET["page"];
 ?>
 <div>
     <table class="selection">
@@ -21,7 +22,7 @@ $conn=OpenCon();
             <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
-            <td style="background-color: lightgray;"><a href="webshop.php">Web Shop</a></td>
+            <td style="background-color: lightgray;"><a href="webshop.php?page=1" onclick="<?php SessionDestroy(); ?>">Web Shop</a></td>
         </tr>
         </tbody>
     </table>
@@ -66,145 +67,110 @@ $conn=OpenCon();
             </div>
             <br>
             <div class="pretrazi">
-                    <input type="submit" id="pretrazi" name="pretrazi" value="Pretraži">
+                <input type="submit" id="pretrazi" name="pretrazi" value="Pretraži">
             </div>
         </form>
         <?php
-        $filters=0;
-        if(isset($_POST["pretrazi"]))
-        {
+        if(isset($_POST["pretrazi"])) {
+            $_SESSION["filters"]=1;
             if(isset($_POST["search"])){
-                $filters=1;
                 $serime=$_POST["search"];
-                if($serime==null)
-                {
+                if($serime==null) {
                     $sql[] = " Ime LIKE '%' ";
                 }
-                else $sql[] = " Ime LIKE '%$serime%' ";
+                else {
+                    $_SESSION["filters"]=1;
+                    $sql[] = " Ime LIKE '%$serime%' ";
+                }
             }
-            if(isset($_POST["mincijena"]))
-            {
-                $filters=1;
+            if(isset($_POST["mincijena"])) {
                 $sermincijena=$_POST["mincijena"];
                 if($sermincijena==null)
                 {
                     $sql[] = " Cijena BETWEEN 0 ";
                 }
-                else $sql[] = " Cijena BETWEEN $sermincijena ";
+                else {
+                    $_SESSION["filters"]=1;
+                    $sql[] = " Cijena BETWEEN $sermincijena ";
+                }
             }
-            if(isset($_POST["maxcijena"]))
-            {
-                $filters=1;
+            if(isset($_POST["maxcijena"])) {
                 $sermaxcijena=$_POST["maxcijena"];
                 if($sermaxcijena==null)
                 {
                     $sql[] = " 9999999999999999 ";
                 }
-                else $sql[] = " $sermaxcijena ";
+                else {
+                    $_SESSION["filters"]=1;
+                    $sql[] = " $sermaxcijena ";
+                }
             }
             if(!empty($_POST['proizvodac'])) {
-                $filters=1;
+                $_SESSION["filters"]=1;
                 foreach($_POST['proizvodac'] as $value){
-                    $sqlpro[] = " '$value' ";}
+                    $sqlpro[] = " '$value' ";
+                }
             }
             if (!empty($sql)) {
-                $query =null;
                 if (empty($sqlpro)) {
                     $sqlpro[] = " SELECT Proizvodac FROM proizvod ";
                 }
-                $query .= 'SELECT * FROM proizvod WHERE ' . implode(' AND ', $sql) . 'AND Proizvodac IN (' . implode(' , ',$sqlpro) . ')';
+                $_SESSION["query"] = 'SELECT * FROM proizvod WHERE ' . implode(' AND ', $sql) . 'AND Proizvodac IN (' . implode(' , ',$sqlpro) . ')' . ' ORDER BY ID';
             }
-            $_SESSION['sadstr']=1;
-            echo $query;
+            $page=1;
         }
         ?>
     </div>
     <div class="navig">
         <?php
-        if($filters==0) {
-            $navig = $conn->prepare("SELECT * FROM `proizvod` WHERE 1;");
-        }
-        else {
-            $navig = $conn->prepare($query);
-        }
-        $navig->execute();
-        $brojred = mysqli_num_rows($navig->get_result());
-        $brojstr = ceil($brojred/9);
-        $sadstr=1;
-        if(isset($_SESSION['sadstr']))
-            $sadstr = $_SESSION['sadstr'];
+            if(empty($page) || $page <= 0)
+            {
+                header("location: webshop.php?page=1");
+            }
+            if($_SESSION["filters"]==0)
+            {
+                $_SESSION["query"]="SELECT * FROM proizvod WHERE 1";
+            }
+
+
+            $broj = $conn->prepare($_SESSION["query"]);
+            $broj->execute();
+            $brojred = mysqli_num_rows($broj->get_result());
+            $brojstr = ceil($brojred/9);
+
+            $rangestart=($page-1)*9;
+            $_SESSION["query"] .= ' LIMIT '.$rangestart.' , 9 ';
+            $stmt = $conn->prepare($_SESSION["query"]);
+            $stmt->execute();
+
+
         ?>
+        <script>
+            function PageMinus(){
+                if(<?php echo $page; ?>-1 > 0){
+                    window.location="webshop.php?page=<?php echo $page-1; ?>";
+                }
+            }
+            function PagePlus(){
+                if(<?php echo $page ?>+1 <= <?php echo $brojstr; ?>){
+                    window.location="webshop.php?page=<?php echo $page+1; ?>"
+                }
+            }
+        </script>
         <form action="" method="post">
-            <?php
-            if (isset($_POST["navbutton"]))
-            {
-                if($_POST["navbutton"]=="<<-" && $sadstr!=1)
-                {
-                    $sadstr=$sadstr-1;
-                    $_SESSION['sadstr'] = $sadstr;
-                }
-                else if($_POST["navbutton"]=="->>" && $sadstr!=$brojstr)
-                {
-                    $sadstr=$sadstr+1;
-                    $_SESSION['sadstr'] = $sadstr;
-                }
-                else if($_POST["navbutton"]=="...")
-                {
-                    $sadstr=$sadstr;
-                    $_SESSION['sadstr'] = $sadstr;
-                }
-                else
-                {
-                    if($_POST["navbutton"]=="<<-")
-                    {
-                        $sadstr=1;
-                        $_SESSION['sadstr'] = $sadstr;
-                    }
-                    else if($_POST["navbutton"]=="->>")
-                    {
-                        $sadstr=$brojstr;
-                        $_SESSION['sadstr'] = $sadstr;
-                    }
-                    else
-                    {
-                        $sadstr=$_POST["navbutton"];
-                        $_SESSION['sadstr'] = $sadstr;
-                    }
-                }
-            }
-            ?>
-            <input type="submit" name="navbutton" value="<<-">
-            <input type="submit" name="navbutton" value="<?php
-            if($sadstr==1)
-            {
-                echo "...";
-            }
-            else echo $sadstr-1;
-            ?>">
-            <input type="submit" name="navbutton" value="<?php echo $sadstr ?>">
-            <input type="submit" name="navbutton" value="<?php
-            if($sadstr==$brojstr)
-            {
-                echo "...";
-            }
-            else echo $sadstr+1 ?>">
-            <input type="submit" name="navbutton" value="->>">
+            <input type="button" value="<?php if($page-1<=0){echo '...';}
+            else echo $page-1; ?>" name="strminus" onclick="PageMinus()">
+            <input type="button" value="<?php echo $page ?>" name="trenstr">
+            <input type="button" value="<?php if($page+1>$brojstr){echo '...';}
+            else echo $page+1 ?>" name="strplus" onclick="PagePlus()">
         </form>
     </div>
     <div class="okvirgrid">
         <?php
-        $rangestart=($sadstr-1)*9;
-        if($filters==0){
-            $stmt = $conn->prepare("SELECT * FROM `proizvod` WHERE 1 LIMIT $rangestart,9");
-        }
-        else {
-            $query .= ' LIMIT '.$rangestart.' , 9 ';
-            $stmt = $conn->prepare($query);
-        }
-        $stmt->execute();
         IspisGrid($stmt);
         ?>
     </div>
+    <div><?php echo $_SESSION["query"]; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
 </div>
 <?php
 CloseCon($conn);
