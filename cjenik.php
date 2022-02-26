@@ -12,7 +12,7 @@
 <?php
 include 'functions.php';
 $conn=OpenCon();
-SessionDestroy();
+CookieDestroy();
 ?>
     <div>
         <table class="selection">

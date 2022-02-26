@@ -72,12 +72,8 @@ function IspisGrid($stmt)
         }*/
 }
 
-function SessionDestroy(){
-    session_start();
-    unset($_SESSION["query"]);
-    unset($_SESSION["filters"]);
-    session_unset();
-    session_destroy();
+function CookieDestroy(){
+    setcookie("filters", "", time() - 3600, "/");
+    setcookie("query", "", time() - 3600, "/");
 }
-
 ?>

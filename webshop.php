@@ -10,7 +10,6 @@
 </head>
 <body>
 <?php
-session_start();
 include 'functions.php';
 $conn=OpenCon();
 $page = $_GET["page"];
@@ -22,7 +21,7 @@ $page = $_GET["page"];
             <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
-            <td style="background-color: lightgray;"><a href="webshop.php?page=1" onclick="<?php SessionDestroy(); ?>">Web Shop</a></td>
+            <td style="background-color: lightgray;"><a href="webshop.php?page=1">Web Shop</a></td>
         </tr>
         </tbody>
     </table>
@@ -58,7 +57,7 @@ $page = $_GET["page"];
                 for ($x = 0; $x < $len; $x++) {
                     $element =
                         '
-                            <input type="checkbox" id="' . $array[$x] . '" name="proizvodac[]" value="' . $array[$x] . '">
+                            <input type="checkbox" id="' . $array[$x] . '" name="proizvodac[]" value="' . $array[$x] . '" >
                             <label for="' . $array[$x] . '">' . $array[$x] . '</label><br>
                         ';
                     echo $element;
@@ -72,14 +71,14 @@ $page = $_GET["page"];
         </form>
         <?php
         if(isset($_POST["pretrazi"])) {
-            $_SESSION["filters"]=1;
+            setcookie("filters", "1", time() + (86400 * 30), "/");
             if(isset($_POST["search"])){
                 $serime=$_POST["search"];
                 if($serime==null) {
                     $sql[] = " Ime LIKE '%' ";
                 }
                 else {
-                    $_SESSION["filters"]=1;
+                    $_COOKIE["filters"]=1;
                     $sql[] = " Ime LIKE '%$serime%' ";
                 }
             }
@@ -90,7 +89,7 @@ $page = $_GET["page"];
                     $sql[] = " Cijena BETWEEN 0 ";
                 }
                 else {
-                    $_SESSION["filters"]=1;
+                    $_COOKIE["filters"]=1;
                     $sql[] = " Cijena BETWEEN $sermincijena ";
                 }
             }
@@ -101,12 +100,12 @@ $page = $_GET["page"];
                     $sql[] = " 9999999999999999 ";
                 }
                 else {
-                    $_SESSION["filters"]=1;
+                    $_COOKIE["filters"]=1;
                     $sql[] = " $sermaxcijena ";
                 }
             }
             if(!empty($_POST['proizvodac'])) {
-                $_SESSION["filters"]=1;
+                $_COOKIE["filters"]=1;
                 foreach($_POST['proizvodac'] as $value){
                     $sqlpro[] = " '$value' ";
                 }
@@ -115,9 +114,10 @@ $page = $_GET["page"];
                 if (empty($sqlpro)) {
                     $sqlpro[] = " SELECT Proizvodac FROM proizvod ";
                 }
-                $_SESSION["query"] = 'SELECT * FROM proizvod WHERE ' . implode(' AND ', $sql) . 'AND Proizvodac IN (' . implode(' , ',$sqlpro) . ')' . ' ORDER BY ID';
+                $query = 'SELECT * FROM proizvod WHERE ' . implode(' AND ', $sql) . 'AND Proizvodac IN (' . implode(' , ',$sqlpro) . ')' . ' ORDER BY ID';
+                setcookie("query", $query, time() + (86400 * 30), "/");
             }
-            $page=1;
+            header("location: webshop.php?page=1");
         }
         ?>
     </div>
@@ -127,20 +127,21 @@ $page = $_GET["page"];
             {
                 header("location: webshop.php?page=1");
             }
-            if($_SESSION["filters"]==0)
-            {
-                $_SESSION["query"]="SELECT * FROM proizvod WHERE 1";
+            if($_COOKIE["filters"]==1){
+                $query=$_COOKIE["query"];
+            }
+            else{
+                $query="SELECT * FROM proizvod WHERE 1";
             }
 
-
-            $broj = $conn->prepare($_SESSION["query"]);
+            $broj = $conn->prepare($query);
             $broj->execute();
             $brojred = mysqli_num_rows($broj->get_result());
             $brojstr = ceil($brojred/9);
 
             $rangestart=($page-1)*9;
-            $_SESSION["query"] .= ' LIMIT '.$rangestart.' , 9 ';
-            $stmt = $conn->prepare($_SESSION["query"]);
+            $query = $query . ' LIMIT '.$rangestart.' , 9 ';
+            $stmt = $conn->prepare($query);
             $stmt->execute();
 
 
@@ -170,7 +171,7 @@ $page = $_GET["page"];
         IspisGrid($stmt);
         ?>
     </div>
-    <div><?php echo $_SESSION["query"]; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
+    <div><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_COOKIE["filters"]?></div>
 </div>
 <?php
 CloseCon($conn);

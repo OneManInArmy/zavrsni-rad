@@ -10,4 +10,3 @@ function vrti() {
     x[broj-1].style.display = "block";
     setTimeout(vrti, 2000); // Change image every 2 seconds
 }
-
