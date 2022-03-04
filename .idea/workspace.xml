@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Addes session variables - Memo: create functions for generating SID, try passing it to next link">
+    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Filtering across pages now works using cookies - Memo: retention of values on submit should be implemented">
+      <change afterPath="$PROJECT_DIR$/adminlogin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adminshop.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prodchange.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cjenik.php" beforeDir="false" afterPath="$PROJECT_DIR$/cjenik.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webshop.php.old" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -119,7 +125,8 @@
       <workItem from="1645628586845" duration="8848000" />
       <workItem from="1645717460607" duration="13334000" />
       <workItem from="1645808743484" duration="9864000" />
-      <workItem from="1645884989110" duration="8161000" />
+      <workItem from="1645884989110" duration="8494000" />
+      <workItem from="1646426180438" duration="9175000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -198,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645818971527</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Filtering across pages now works using cookies - Memo: retention of values on submit should be implemented">
+      <created>1645894280121</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1645894280121</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +255,8 @@
     <MESSAGE value="Trying to add filters to shop search - failed" />
     <MESSAGE value="Filtering now works - need to fix when getting multiple pages on filters" />
     <MESSAGE value="Addes session variables - Memo: create functions for generating SID, try passing it to next link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Addes session variables - Memo: create functions for generating SID, try passing it to next link" />
+    <MESSAGE value="Filtering across pages now works using cookies - Memo: retention of values on submit should be implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filtering across pages now works using cookies - Memo: retention of values on submit should be implemented" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

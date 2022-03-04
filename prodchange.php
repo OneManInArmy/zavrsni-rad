@@ -29,15 +29,15 @@ CookieDestroy();
 </div>
 <div id="zafunkciju" class="prodbox">
     <?php
-        $stmt = $conn->prepare("SELECT * FROM `proizvod` WHERE Ime = '$ime';");
-        $stmt->execute();
-        foreach ($stmt->get_result() as $row) {
-            $Ime = $row['Ime'];
-            $Cijena = $row['Cijena'];
-            $Opis = $row['Opis'];
-            $Slika = $row['Slika'];
-        }
-        echo "
+    $stmt = $conn->prepare("SELECT * FROM `proizvod` WHERE Ime = '$ime';");
+    $stmt->execute();
+    foreach ($stmt->get_result() as $row) {
+        $Ime = $row['Ime'];
+        $Cijena = $row['Cijena'];
+        $Opis = $row['Opis'];
+        $Slika = $row['Slika'];
+    }
+    echo "
             <div class='picture'>
                 <img src=".$Slika." alt=".$Ime.">
             </div>
@@ -59,6 +59,5 @@ CookieDestroy();
         ";
     ?>
 </div>
-
 </body>
 </html>

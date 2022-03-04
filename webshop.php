@@ -168,11 +168,37 @@ $page = $_GET["page"];
     </div>
     <div class="okvirgrid">
         <?php
-        IspisGrid($stmt);
+        $x=1;
+        foreach ($stmt->get_result() as $row) {
+        $Ime = $row['Ime'];
+        $Cijena = $row['Cijena'];
+        $Opis = $row['Opis'];
+        $Slika = $row['Slika'];
+        echo
+            '
+            <div class="item' . $x . '">
+                    <div class="item">
+                        <a href="product.php?prod=' . $Ime . '">
+                            <img src="' . $Slika . '" alt="Slika ' . $x . '. uređaja">
+                        </a>
+                        <hr>
+                        <a href="product.php?prod=' . $Ime . '">
+                            <h2>' . $Ime . '</h2>
+                            <h2>' . $Cijena . ' kn</h2>
+                            <p>' . $Opis . '</p>
+                        </a>
+                    </div>
+            </div>
+           ';
+        $x++;
+        }
         ?>
     </div>
-    <div><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_COOKIE["filters"]?></div>
 </div>
+<footer class="footer">
+    <div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_COOKIE["filters"]?></div>
+    <a style="float: right" href="adminshop.php">Admin</a>
+</footer>
 <?php
 CloseCon($conn);
 ?>

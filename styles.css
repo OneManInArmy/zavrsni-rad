@@ -193,7 +193,6 @@ Početak CSS za WEBSHOP stranicu
 .okvirshop > div
 {
     border: 5px solid orange;
-    border-collapse: collapse;
     padding: 20px;
 }
 .sidebyside
@@ -215,33 +214,46 @@ Početak CSS za WEBSHOP stranicu
 }
 .item
 {
+    display: flex;
+    flex-direction: column;
     box-shadow: -5px 5px 5px gray;
-    width: 100%;
-    height: 100%;
     border: black solid 1px;
+    padding: 2px;
+
 }
-.item p
+.prodtext p
 {
     margin-left: 3%;
     margin-right: 3%;
     padding-bottom: 5%;
     font-family: Verdana, serif;
 }
-.item h2
+.prodtext h2
 {
     margin-left: 3%;
     font-family: Helvetica, serif;
 }
-.item img
+.prodimg img
 {
     width: 100%;
-    height: 40%;
+}
+.prodbutton
+{
+    align-self: center;
 }
 .navig
 {
     display: flex;
     justify-content: center;
     gap:1%;
+}
+
+.footer{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    top: 20vh;
+    padding: 10px;
 }
 /*
 Kraj CSS za WEBSHOP stranicu
