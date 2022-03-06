@@ -42,14 +42,14 @@ CREATE TABLE `proizvod` (
 --
 
 INSERT INTO `proizvod` (`ID`, `Ime`, `Cijena`, `Proizvodac`, `Slika`, `Opis`, `DatumDodano`) VALUES
-(1, 'QuietComfort® 2 Acoustic Noise Cancelling® headphones', 1500, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
+(1, 'QuietComfort 2 Acoustic Noise Cancelling headphones', 1500, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
 (2, 'DJM-S7', 1400, 'Pioneer', 'slike/pioneerlogo.png', 'Scratch-style 2-channel performance DJ mixer', '2022-01-28 13:41:28'),
 (3, 'Z3', 1200, 'Clarion', 'slike/clarionlogo.png', 'Full Digital Sound Processor (Sound Processor/Tweeter /Commander)', '2022-01-28 13:41:28'),
 (4, 'SoundTouch 30 I II', 2000, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
 (5, 'DJM-V10-LF', 4500, 'Pioneer', 'slike/pioneerlogo.png', 'Creative style 6-channel professional DJ mixer with long fader', '2022-01-28 13:41:28'),
 (6, 'SoundTouch 120 System', 3000, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
 (7, 'N-Wave 360', 3600, 'Numark', 'slike/numarklogo.png', 'Powered Desktop DJ Monitors ', '2022-01-28 13:41:28'),
-(8, 'SoundTouch® 10 wireless speaker', 1000, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
+(8, 'SoundTouch 10 wireless speaker', 1000, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
 (9, 'DJM-750MK2', 3500, 'Pioneer', 'slike/pioneerlogo.png', '4-channel performance DJ mixer', '2022-01-28 13:41:28'),
 (10, 'Z25W', 850, 'Clarion', 'slike/clarionlogo.png', 'FULL DIGITAL SUBWOOFER', '2022-01-28 13:41:28'),
 (11, 'SoundTouch 520 System', 2500, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
@@ -58,10 +58,10 @@ INSERT INTO `proizvod` (`ID`, `Ime`, `Cijena`, `Proizvodac`, `Slika`, `Opis`, `D
 (14, 'Party Mix II', 4900, 'Numark', 'slike/numarklogo.png', 'DJ Controller with Built-In Light Show', '2022-01-28 13:41:28'),
 (15, 'Bose Home Speaker 450', 1850, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
 (16, 'Z7', 600, 'Clarion', 'slike/clarionlogo.png', 'FULL DIGITAL SPEAKER', '2022-01-28 13:41:28'),
-(17, 'Lifestyle® 135 home entertainment system', 2250, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
+(17, 'Lifestyle 135 home entertainment system', 2250, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
 (18, 'SoundLink Mobile Speaker II', 1500, 'Bose', 'slike/boselogo.png', '', '2022-01-28 13:41:28'),
 (19, 'CDJ-2000NXS2', 4200, 'Pioneer', 'slike/pioneerlogo.png', 'Professional DJ multi player with disc drive', '2022-01-28 13:41:28'),
-(20, 'CX-A5200', 7500, 'Yamaha', 'slike/yamahalogo.png', '11.2 ch AVENTAGE pre-amplifier featuring CINEMA DSP HD3 with Dolby Atmos® and DTS:X®.', '2022-01-28 13:41:28');
+(20, 'CX-A5200', 7500, 'Yamaha', 'slike/yamahalogo.png', '11.2 ch AVENTAGE pre-amplifier featuring CINEMA DSP HD3 with Dolby Atmos and DTS:X.', '2022-01-28 13:41:28');
 
 --
 -- Indexes for dumped tables

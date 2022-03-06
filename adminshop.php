@@ -180,10 +180,9 @@ $page = $_GET["page"];
                     <div class="item">
                         <div class="prodimg">
                             <a href="product.php?prod=' . $Ime . '">
-                                <img src="' . $Slika . '" alt="Slika ' . $x . '. uređaja">
+                                <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
                             </a>
                         </div>    
-                        <hr>
                         <div class="prodtext">
                             <a href="product.php?prod=' . $Ime . '">
                                 <h2>' . $Ime . '</h2>

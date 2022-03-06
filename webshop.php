@@ -179,9 +179,8 @@ $page = $_GET["page"];
             <div class="item' . $x . '">
                     <div class="item">
                         <a href="product.php?prod=' . $Ime . '">
-                            <img src="' . $Slika . '" alt="Slika ' . $x . '. uređaja">
+                            <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
                         </a>
-                        <hr>
                         <a href="product.php?prod=' . $Ime . '">
                             <h2>' . $Ime . '</h2>
                             <h2>' . $Cijena . ' kn</h2>
