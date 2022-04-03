@@ -1,7 +1,3 @@
-:root
-{
-
-}
 * {
     box-sizing: border-box;
 }
@@ -310,5 +306,6 @@ Početak CSS za PRODUCT stranicu
     'number longdescription longdescription';
     grid-gap: 25px;
     border: 1px orange solid;
+    padding: 5px;
 }
 
