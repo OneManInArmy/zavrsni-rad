@@ -6,7 +6,7 @@ $conn=OpenCon();
 CookieDestroy();
 ?>
 <head>
-    <meta charset="utf8_croatian_ci">
+    <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="slike/servislogo.png">
@@ -37,27 +37,25 @@ CookieDestroy();
             $Opis = $row['Opis'];
             $Slika = $row['Slika'];
         }
-        echo "
-            <div class='picture'>
-                <img src=".$Slika." alt=".$Ime.">
-            </div>
-            <div class='name'>
-                <h1>$Ime</h1>
-            </div>
-            <div class='description'>
-                <p>$Opis</p>
-            </div>
-            <div class='empty'>
-                
-            </div>
-            <div class='price'>
-                <p>Cijena: $Cijena kn</p>
-            </div>
-            <div class='contact'>
-                <p>Kontaktirajte Kolegu</p>
-            </div>
-        ";
     ?>
+    <div class='picture'>
+        <img src="<?php echo "slike/$Slika"; ?>" alt=".$Ime.">
+    </div>
+    <div class='name'>
+        <h1><?php echo $Ime; ?></h1>
+    </div>
+    <div class='description'>
+        <p><?php echo $Opis; ?></p>
+    </div>
+    <div class='empty'>
+
+    </div>
+    <div class='price'>
+        <p>Cijena: <?php echo $Cijena; ?> kn</p>
+    </div>
+    <div class='contact'>
+        <p>Kontaktirajte Kolegu</p>
+    </div>
 </div>
 
 </body>
