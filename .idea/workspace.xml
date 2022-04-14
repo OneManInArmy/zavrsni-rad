@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Started making the admin shop">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="Webshop page is now fully operational">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminshop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/prodchange.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +45,14 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d3ca156d-7fc6-447c-a4fe-82c565defd31" />
+        <option name="url" value="https://github.com/OneManInArmy/zavrsni-rad.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/scripts.ts" root0="FORCE_HIGHLIGHTING" />
@@ -55,7 +60,6 @@
     <setting file="file://$PROJECT_DIR$/prodchange.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/adminshop.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/functions.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb78d642-8a40-44ad-951c-eb1bec611dec/console.sql" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -130,7 +134,9 @@
       <workItem from="1646426180438" duration="9266000" />
       <workItem from="1646584765702" duration="13026000" />
       <workItem from="1649509323616" duration="3498000" />
-      <workItem from="1649514963995" duration="21086000" />
+      <workItem from="1649514963995" duration="21254000" />
+      <workItem from="1649597805740" duration="895000" />
+      <workItem from="1649937631392" duration="10078000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -223,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646435701746</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Proper changing of values in a product now works, YAY!">
+      <created>1649539397935</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1649539397935</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +281,9 @@
     <MESSAGE value="Addes session variables - Memo: create functions for generating SID, try passing it to next link" />
     <MESSAGE value="Filtering across pages now works using cookies - Memo: retention of values on submit should be implemented" />
     <MESSAGE value="Started making the admin shop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started making the admin shop" />
+    <MESSAGE value="Proper changing of values in a product now works, YAY!" />
+    <MESSAGE value="Webshop page is now fully operational" />
+    <option name="LAST_COMMIT_MESSAGE" value="Webshop page is now fully operational" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

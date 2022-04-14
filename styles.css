@@ -1,11 +1,25 @@
 * {
     box-sizing: border-box;
 }
-body, html
-{
+body, html {
     margin: 0;
     scroll-behavior: smooth;
 }
+/*
+Micanje strelica sa input type number
+*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 /*
 Navigacijski menu
 */
@@ -215,7 +229,14 @@ Početak CSS za WEBSHOP stranicu
     box-shadow: -5px 5px 5px gray;
     border: black solid 1px;
     padding: 2px;
-
+}
+.item a
+{
+    text-decoration: none;
+}
+a, a:hover, a:link, a:visited
+{
+    color: black;
 }
 .prodtext p
 {
