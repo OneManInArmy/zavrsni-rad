@@ -16,10 +16,6 @@ function CloseCon($conn)
 {
     $conn->close();
 }
-function CookieDestroy(){
-    setcookie("filters", "", time() - 3600, "/");
-    setcookie("query", "", time() - 3600, "/");
-}
 function SessionDestroy(){
     session_start();
     session_unset();

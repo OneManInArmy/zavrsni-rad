@@ -25,6 +25,7 @@
 include 'functions.php';
 $conn=OpenCon();
 $page = $_GET["page"];
+session_start();
 ?>
 <div class="okvirshop">
     <div class="filters">

@@ -3,7 +3,7 @@
 <?php
 include 'functions.php';
 $conn=OpenCon();
-CookieDestroy();
+SessionDestroy();
 ob_start();
 ?>
 <head>

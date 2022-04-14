@@ -85,14 +85,13 @@ session_start();
         </form>
         <?php
         if(isset($_POST["pretrazi"])) {
-            setcookie("filters", "1", time() + (86400 * 30), "/");
+            $_SESSION["filters"] = 1;
             if(isset($_POST["search"])){
                 $serime=htmlspecialchars($_POST["search"]);
                 if($serime==null) {
                     $sql[] = " Ime LIKE '%' ";
                 }
                 else {
-                    $_COOKIE["filters"]=1;
                     $sql[] = " Ime LIKE '%$serime%' ";
                 }
             }
@@ -103,7 +102,6 @@ session_start();
                     $sql[] = " Cijena BETWEEN 0 ";
                 }
                 else {
-                    $_COOKIE["filters"]=1;
                     $sql[] = " Cijena BETWEEN $sermincijena ";
                 }
             }
@@ -114,12 +112,10 @@ session_start();
                     $sql[] = " 999999999 ";
                 }
                 else {
-                    $_COOKIE["filters"]=1;
                     $sql[] = " $sermaxcijena ";
                 }
             }
             if(!empty($_POST['proizvodac'])) {
-                $_COOKIE["filters"]=1;
                 foreach($_POST['proizvodac'] as $value){
                     $sqlpro[] = " '$value' ";
                 }
@@ -130,7 +126,6 @@ session_start();
                     $queryorder = "ORDER BY ID";
                 }
                 else{
-                    $_COOKIE["filters"]=1;
                     $queryorder = $_POST["order"];
                 }
             }
@@ -139,7 +134,7 @@ session_start();
                     $sqlpro[] = " SELECT Proizvodac FROM proizvod ";
                 }
                 $query = 'SELECT * FROM proizvod WHERE ' . implode(' AND ', $sql) . 'AND Proizvodac IN (' . implode(' , ',$sqlpro) . ') ' . $queryorder;
-                setcookie("query", $query, time() + (86400 * 30), "/");
+                $_SESSION["query"] = $query;
             }
             header("location: webshop.php?page=1");
         }
@@ -152,8 +147,8 @@ session_start();
                 header("location: webshop.php?page=1");
             }
 
-            if($_COOKIE["filters"]==1){
-                $query=$_COOKIE["query"];
+            if($_SESSION["filters"]==1){
+            $query= $_SESSION["query"];
             }
             else{
                 $query="SELECT * FROM proizvod WHERE 1";
@@ -231,7 +226,7 @@ session_start();
     </div>
 </div>
 <footer class="footer">
-    <div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_COOKIE["filters"]?></div>
+<div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
     <a style="float: right" href="adminshop.php">Admin</a>
 </footer>
 <?php

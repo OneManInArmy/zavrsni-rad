@@ -19,7 +19,14 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
-
+a
+{
+    text-decoration: none;
+}
+a, a:hover, a:link, a:visited
+{
+    color: black;
+}
 /*
 Navigacijski menu
 */
@@ -229,14 +236,6 @@ Početak CSS za WEBSHOP stranicu
     box-shadow: -5px 5px 5px gray;
     border: black solid 1px;
     padding: 2px;
-}
-.item a
-{
-    text-decoration: none;
-}
-a, a:hover, a:link, a:visited
-{
-    color: black;
 }
 .prodtext p
 {
