@@ -33,16 +33,16 @@ session_start();
             <div class="trazilica">
                 <h2>Traži po imenu</h2>
                 <div class="search-container">
-                        <label for="search"></label><input type="text" placeholder="Ime uređaja..." id="search" name="search" onchange="return /[0-9a-zA-Z]/i.test(event.key)" autofocus>
+                    <label for="search"></label><input type="text" placeholder="Ime uređaja..." id="search" name="search" onchange="return /[0-9a-zA-Z]/i.test(event.key)" autofocus>
                 </div>
             </div>
             <br>
             <div class="cijena">
-                    <h2>Traži po cijeni</h2>
-                    <p class="sidebyside">Od</p>
-                    <label for="mincijena"></label><input type="number" min="0" maxlength="8" name="mincijena" id="mincijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
-                    <p class="sidebyside">Do</p>
-                    <label for="maxcijena"></label><input type="number" min="0" maxlength="8" name="maxcijena" id="maxcijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
+                <h2>Traži po cijeni</h2>
+                <p class="sidebyside">Od</p>
+                <label for="mincijena"></label><input type="number" min="0" maxlength="8" name="mincijena" id="mincijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
+                <p class="sidebyside">Do</p>
+                <label for="maxcijena"></label><input type="number" min="0" maxlength="8" name="maxcijena" id="maxcijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
             </div>
             <br>
             <div class="orderby">
@@ -60,10 +60,9 @@ session_start();
             <br>
             <div class="izborpro">
                 <?php
-                $prod = $conn->prepare("SELECT DISTINCT Proizvodac FROM `proizvod` WHERE 1");
-                $prod->execute();
+                $prod = mysqli_query($conn, "SELECT DISTINCT Proizvodac FROM `proizvod` WHERE 1");
                 $array = [];
-                foreach ($prod->get_result() as $row)
+                foreach ($prod as $row)
                 {
                     $array[] = $row['Proizvodac'];
                 }
@@ -81,9 +80,14 @@ session_start();
             <br>
             <div class="pretrazi">
                 <input type="submit" id="pretrazi" name="pretrazi" value="Pretraži">
+                <input type="submit" name="reset" value="Reset">
             </div>
         </form>
         <?php
+        if(isset($_POST["reset"])){
+            QueryDestroy();
+            header("location: webshop.php?page=1");
+        }
         if(isset($_POST["pretrazi"])) {
             $_SESSION["filters"] = 1;
             if(isset($_POST["search"])){
@@ -153,15 +157,13 @@ session_start();
             else{
                 $query="SELECT * FROM proizvod WHERE 1";
             }
-            $broj = $conn->prepare($query);
-            $broj->execute();
-            $brojred = mysqli_num_rows($broj->get_result());
+            $broj = mysqli_query($conn, $query);
+            $brojred = mysqli_num_rows($broj);
             $brojstr = ceil($brojred/9);
 
             $rangestart=($page-1)*9;
             $query = $query . ' LIMIT '.$rangestart.' , 9 ';
-            $stmt = $conn->prepare($query);
-            $stmt->execute();
+            $stmt = mysqli_query($conn, $query);
 
 
         ?>
@@ -176,58 +178,53 @@ session_start();
                     window.location="webshop.php?page=<?php echo $page+1; ?>"
                 }
             }
-            function FirstPage(){
-                if(<?php echo $page; ?> !== 1) {
-                    window.location = "webshop.php?page=1";
-                }
-            }
-            function LastPage(){
-                if(<?php echo $page; ?> !== <?php echo $brojstr; ?>) {
-                    window.location = "webshop.php?page=<?php echo $brojstr; ?>";
-                }
-            }
         </script>
         <form action="" method="post">
-            <input type="button" value="<<" onclick="FirstPage()">
+            <input type="button" value="<<" onclick="PageMinus()">
             <input type="button" value="<?php if($page-1<=0){echo '...';}
             else echo $page-1; ?>" name="strminus" onclick="PageMinus()">
             <input type="button" value="<?php echo $page ?>" name="trenstr">
             <input type="button" value="<?php if($page+1>$brojstr){echo '...';}
             else echo $page+1 ?>" name="strplus" onclick="PagePlus()">
-            <input type="button" value=">>" onclick="LastPage()">
+            <input type="button" value=">>" onclick="PagePlus()">
         </form>
     </div>
     <div class="okvirgrid">
         <?php
         $x=1;
-        foreach ($stmt->get_result() as $row) {
-        $Ime = $row['Ime'];
-        $Cijena = $row['Cijena'];
-        $Opis = $row['Opis'];
-        $Slika = $row['Slika'];
-        echo
-            '
-            <div class="item' . $x . '">
-                    <div class="item">
-                        <a href="product.php?prod=' . $Ime . '">
-                            <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
-                        </a>
-                        <a href="product.php?prod=' . $Ime . '">
-                            <h2>' . $Ime . '</h2>
-                            <h2>' . $Cijena . ' kn</h2>
-                            <p>' . $Opis . '</p>
-                        </a>
+        if(mysqli_num_rows($stmt) != 0){
+            foreach ($stmt as $row) {
+                $Ime = $row['Ime'];
+                $Cijena = $row['Cijena'];
+                $Opis = $row['Opis'];
+                $Slika = $row['Slika'];
+                echo
+                    '
+                    <div class="item' . $x . '">
+                            <div class="item">
+                                <a href="product.php?prod=' . $Ime . '">
+                                    <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
+                                </a>
+                                <a href="product.php?prod=' . $Ime . '">
+                                    <h2>' . $Ime . '</h2>
+                                    <h2>' . $Cijena . ' kn</h2>
+                                    <p>' . $Opis . '</p>
+                                </a>
+                            </div>
                     </div>
-            </div>
-           ';
-        $x++;
+                   ';
+                $x++;
+            }
+        }
+        else {
+            echo "Nema rezultata...";
         }
         ?>
     </div>
 </div>
 <footer class="footer">
 <div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
-    <a style="float: right" href="adminshop.php">Admin</a>
+    <a style="float: right" href="adminlogin.php">Admin</a>
 </footer>
 <?php
 CloseCon($conn);

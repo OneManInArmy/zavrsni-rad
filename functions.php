@@ -1,4 +1,3 @@
-
 <?php
 function OpenCon()
 {
@@ -16,8 +15,9 @@ function CloseCon($conn)
 {
     $conn->close();
 }
-function SessionDestroy(){
+function QueryDestroy(){
     session_start();
-    session_unset();
+    unset($_SESSION["filters"]);
+    unset($_SESSION["query"]);
 }
 ?>

@@ -3,7 +3,7 @@
 <?php
 include 'functions.php';
 $conn=OpenCon();
-CookieDestroy();
+QueryDestroy();
 ?>
 <head>
     <meta charset="utf8">
@@ -22,16 +22,16 @@ CookieDestroy();
             <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
-            <td><a href="webshop.php">Web Shop</a></td>
+            <td><a href="webshop.php?page=1">Web Shop</a></td>
         </tr>
         </tbody>
     </table>
 </div>
 <div id="zafunkciju" class="prodbox">
     <?php
-        $stmt = $conn->prepare("SELECT * FROM `proizvod` WHERE Ime = '$ime';");
-        $stmt->execute();
-        foreach ($stmt->get_result() as $row) {
+
+        $stmt = mysqli_query($conn, "SELECT * FROM `proizvod` WHERE Ime = '$ime';");
+        foreach ($stmt as $row) {
             $Ime = $row['Ime'];
             $Cijena = $row['Cijena'];
             $Opis = $row['Opis'];
