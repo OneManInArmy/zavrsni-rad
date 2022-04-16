@@ -5,6 +5,11 @@ body, html {
     margin: 0;
     scroll-behavior: smooth;
 }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 /*
 Micanje strelica sa input type number
 */
@@ -32,10 +37,8 @@ Navigacijski menu
 */
 .selection
 {
-    z-index: 10;
-    position: absolute;
+    position: relative;
     width: 100%;
-    top:0;
     background-color: white;
     table-layout: fixed;
     text-align: center;
@@ -198,7 +201,7 @@ Početak CSS za WEBSHOP stranicu
     position: relative;
     left: 10%;
     width: 80%;
-    top: 15vh;
+    margin-top: 10vh;
     display: inline-grid;
     grid-template-columns: 1fr 0.9fr 0.9fr 0.9fr;
     grid-template-areas:
@@ -270,12 +273,11 @@ Početak CSS za WEBSHOP stranicu
     justify-content: center;
     gap:1%;
 }
-
 .footer{
     width: 100%;
-    position: relative;
-    top: 20vh;
     padding: 10px;
+    align-self: flex-end;
+    margin-top: 10vh;
 }
 /*
 Kraj CSS za WEBSHOP stranicu
@@ -283,6 +285,14 @@ Kraj CSS za WEBSHOP stranicu
 /*
 Početak CSS za PRODUCT stranicu
  */
+.adminback{
+    position: relative;
+    top: 15vh;
+    left: 10%;
+}
+.adminback:hover{
+    cursor: pointer;
+}
 .picture{grid-area: picture;
     padding: 1%;
 }
@@ -294,6 +304,13 @@ Početak CSS za PRODUCT stranicu
 }
 .shortdescription{grid-area: shortdescription;
     padding: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.shortdescription p
+{
+    margin: 0;
 }
 .price{grid-area: price;
     padding: 1%;
@@ -311,11 +328,18 @@ Početak CSS za PRODUCT stranicu
 }
 .longdescription{grid-area: longdescription;
     padding: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .longdescription textarea
 {
     width: 100%;
     height: 300px;
+}
+.longdescription p
+{
+    margin: 0;
 }
 .prodbox
 {

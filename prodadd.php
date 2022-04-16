@@ -11,7 +11,6 @@ if($_SESSION["loggedin"] != TRUE) {
 include 'functions.php';
 $conn=OpenCon();
 QueryDestroy();
-ob_start();
 ?>
 <head>
     <meta charset="utf8">
@@ -39,86 +38,64 @@ ob_start();
     <a onclick="window.location='adminshop.php?page=1'"><span>&#8592;</span>Nazad</a>
 </div>
 <div class="prodbox">
-    <?php
-    $stmt = mysqli_query($conn, "SELECT * FROM `proizvod` WHERE Ime = '$ime';");
-    foreach ($stmt as $row) {
-        $Ime = $row['Ime'];
-        $Cijena = $row['Cijena'];
-        $Opis = $row['Opis'];
-        $DugiOpis = $row['DugiOpis'];
-        $Slika = $row['Slika'];
-        $Broj = $row['Broj'];
-        $Proizvodac = $row['Proizvodac'];
-    }
-    ?>
     <div class='picture'>
-            <img id="preview" src="<?php echo "slike/$Slika"?>" alt="<?php echo $Ime; ?>">
-            <script>
-                const loadFile = function (event) {
-                    const output = document.getElementById('preview');
-                    output.src = URL.createObjectURL(event.target.files[0]);
-                    output.onload = function () {
-                        URL.revokeObjectURL(output.src) // free memory
-                    }
-                };
-            </script>
-        <form action="" method="post" enctype="multipart/form-data" name="promjena" id="promjena">
+        <img id="preview" src="" alt="Product Image">
+        <script>
+            const loadFile = function (event) {
+                const output = document.getElementById('preview');
+                output.src = URL.createObjectURL(event.target.files[0]);
+                output.onload = function () {
+                    URL.revokeObjectURL(output.src) // free memory
+                }
+            };
+        </script>
+        <form action="" method="post" enctype="multipart/form-data" name="dodaj" id="dodaj">
             Select Image Files to Upload:
-            <input type="file" name="fileToUpload[]" id="fileToUpload" onchange="loadFile(event)" accept="image/*" form="promjena">
+            <input type="file" name="fileToUpload[]" id="fileToUpload" onchange="loadFile(event)" accept="image/*" form="dodaj" required>
         </form>
     </div>
     <div class='name'>
         <label>
-            <input type="text" name="prodname" id="prodname" placeholder="Ime uređaja..." form="promjena" required>
+            <input type="text" name="prodname" id="prodname" placeholder="Ime uređaja..." form="dodaj" required>
         </label>
     </div>
     <div class='shortdescription'>
         <label for="shortdesc">Kratiki Opis:</label>
         <br>
-        <input style="width: 60%;" id="shortdesc" name="shortdesc" type="text" placeholder="Kratki opis..." form="promjena">
+        <input style="width: 60%;" id="shortdesc" name="shortdesc" type="text" placeholder="Kratki opis..." form="dodaj">
     </div>
     <div class='price'>
         <label for="price">Cijena: </label>
-        <input type="number" name="price" id="price" placeholder="Cijena..." form="promjena" min="1" required> kn
+        <input type="number" name="price" id="price" placeholder="Cijena..." form="dodaj" min="0" maxlength="8" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}" required> kn
     </div>
     <div class='contact'>
         <label for="manufacturer">Proizvođač</label>
-        <input id="manufacturer" name="manufacturer" type="text" list="proizvodaci" placeholder="Proizovđač..." form="promjena" required>
+        <input id="manufacturer" name="manufacturer" type="text" list="proizvodaci" placeholder="Proizovđač..." form="dodaj" required>
         <datalist id="proizvodaci">
-                <option value="Bose">Bose</option>
-                <option value="Pioneer">Pioneer</option>
-                <option value="Yamaha">Yamaha</option>
-                <option value="Numark">Numark</option>
-                <option value="Clarion">Clarion</option>
-                <option value="Sony">Sony</option>
-            </datalist>
+            <option value="Bose">Bose</option>
+            <option value="Pioneer">Pioneer</option>
+            <option value="Yamaha">Yamaha</option>
+            <option value="Numark">Numark</option>
+            <option value="Clarion">Clarion</option>
+            <option value="Sony">Sony</option>
+        </datalist>
     </div>
     <div class="number">
         <div>
             <label for="available">Raspoloživo:</label>
-            <input type="number" id="available" name="available" placeholder="Raspoloživo..." form="promjena" required>
+            <input type="number" id="available" name="available" placeholder="Raspoloživo..." form="dodaj"  required>
             <br>
-            <input type="submit" name="submit" value="Promijeni" form="promjena" style="position:relative; top:20vh; left:45%;">
+            <input type="submit" name="submit" value="Dodaj" form="dodaj" style="position:relative; top:20vh; left:45%;">
         </div>
     </div>
+    <script>
+    </script>
     <div class="longdescription">
         <label for="longdesc">Dugi Opis:</label>
         <br>
-        <textarea name="longdesc" id="longdesc" wrap="hard" placeholder="Dugi opis ovdje..." form="promjena" style="resize: none;"><?php echo $DugiOpis; ?></textarea>
+        <textarea name="longdesc" id="longdesc" wrap="hard" placeholder="Dugi opis ovdje..." form="dodaj" style="resize: none;"></textarea>
     </div>
 </div>
-<script>
-    window.addEventListener('load', () => {
-        Fill();
-    });
-    function Fill() {
-        document.getElementById('prodname').value = '<?php echo $Ime;?>';
-        document.getElementById('shortdesc').value = '<?php echo $Opis;?>';
-        document.getElementById('price').value = '<?php echo $Cijena;?>';
-        document.getElementById('manufacturer').value = '<?php echo $Proizvodac;?>';
-        document.getElementById('available').value = '<?php echo $Broj;?>';
-    }
-</script>
 <footer class="footer">
     <div style="text-align: center">
         <?php
@@ -130,8 +107,7 @@ ob_start();
             $available = strip_tags($_POST['available']);
             $manufacturer = strip_tags($_POST['manufacturer']);
 
-            $change = $conn->prepare("UPDATE `proizvod` SET `Ime`='$name',`Cijena`='$price',`Proizvodac`='$manufacturer',`Opis`='$shortdesc',`DugiOpis`='$longdesc',`Broj`='$available' WHERE `Ime` LIKE '$ime'");
-            $change->execute();
+
 
             $target_dir = "slike/";
             $fileName = array_filter($_FILES['fileToUpload']['name']);
@@ -171,24 +147,20 @@ ob_start();
 
                     // Check if $uploadOk is set to 0 by an error
                     if ($uploadOk == 0) {
-                        echo "<br>Sorry, your file was not uploaded.";
-                        header("location: prodchange.php?prod=$name");
+                        echo "<br>Sorry, your file and information was not uploaded.";
                         // if everything is ok, try to upload file
                     } else {
                         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$key], $target_file)) {
                             $filename = htmlspecialchars(basename($_FILES["fileToUpload"]["name"][$key]));
-                            echo "<br>The file " . $filename . " has been uploaded.";
-                            $stmt = $conn->prepare("UPDATE `proizvod` SET `Slika`='$filename' WHERE `Ime` LIKE '$name'");
-                            $stmt->execute();
+                            echo "<br>The file " . $filename . " and information has been uploaded.";
+                            $change = $conn->prepare("INSERT INTO `proizvod`(`Ime`, `Cijena`, `Proizvodac`, `Slika`, `Opis`, `DugiOpis`, `Broj`) VALUES ('$name','$price','$manufacturer','$filename','$shortdesc','$longdesc','$available')");
+                            $change->execute();
+                            header("location: prodadd.php");
                         } else {
                             echo "<br>Sorry, there was an error uploading your file.";
                         }
-                        header("location: prodchange.php?prod=$name");
                     }
                 }
-            }
-            else {
-                header("location: prodchange.php?prod=$name");
             }
         }
         ?>

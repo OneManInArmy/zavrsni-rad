@@ -1,3 +1,10 @@
+<?php
+session_start();
+if($_SESSION["loggedin"] != TRUE) {
+    header("location: index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="hr">
 <head>
@@ -6,14 +13,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="slike/servislogo.png">
     <script src="scripts.ts"></script>
-    <title>RTV-Servis Marušić Web Shop</title>
+    <title>RTV-Servis Marušić Admin Shop</title>
 </head>
 <body>
 <?php
 include 'functions.php';
 $conn=OpenCon();
 $page = $_GET["page"];
-session_start();
 ?>
 <div>
     <table class="selection">
@@ -162,7 +168,13 @@ session_start();
             $brojstr = ceil($brojred/9);
 
             $rangestart=($page-1)*9;
-            $query = $query . ' LIMIT '.$rangestart.' , 9 ';
+            if($page==1){
+                $query = $query . ' LIMIT '.$rangestart.' , 8 ';
+            }
+            else{
+                $rangestart = $rangestart-1;
+                $query = $query . ' LIMIT '.$rangestart.' , 9 ';
+            }
             $stmt = mysqli_query($conn, $query);
 
 
@@ -191,43 +203,93 @@ session_start();
     </div>
     <div class="okvirgrid">
         <?php
-        $x=1;
-        if(mysqli_num_rows($stmt) != 0) {
-            foreach ($stmt as $row) {
-                $Ime = $row['Ime'];
-                $Cijena = $row['Cijena'];
-                $Opis = $row['Opis'];
-                $Slika = $row['Slika'];
-                echo
-                    '
-            <div class="item' . $x . '">
-                    <div class="item">
-                        <div class="prodimg">
-                            <a href="product.php?prod=' . $Ime . '">
-                                <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
-                            </a>
-                        </div>    
-                        <div class="prodtext">
-                            <a href="product.php?prod=' . $Ime . '">
-                                <h2>' . $Ime . '</h2>
-                                <h2>' . $Cijena . ' kn</h2>
-                                <p>' . $Opis . '</p>
-                            </a>
-                        </div>
-                        <div class="prodbutton">
-                            <a href="prodchange.php?prod=' . $Ime . '"><button>Izmjeni</button></a>
-                            <form method="post" action="delete.php?prod=' . $Ime . '&page=' . $page . '">
-                                <button name="izbrisi">Izbriši</button>
-                            </form>
-                        </div>
+        if($page == 1){
+            echo '
+                    <div class="item1">
+                            <div class="item" style="text-align: center">
+                                <a href="prodadd.php">
+                                    <img src="slike/addnew.png" alt="Add New">
+                                </a>
+                                <a href="prodadd.php">
+                                    <h2>DODAJ NOVO</h2>
+                                </a>
+                            </div>
                     </div>
-            </div>
-           ';
-                $x++;
+                    ';
+            $x = 2;
+            if (mysqli_num_rows($stmt) != 0) {
+                foreach ($stmt as $row) {
+                    $Ime = $row['Ime'];
+                    $Cijena = $row['Cijena'];
+                    $Opis = $row['Opis'];
+                    $Slika = $row['Slika'];
+                    echo '
+                    <div class="item' . $x . '">
+                            <div class="item">
+                                <div class="prodimg">
+                                    <a href="product.php?prod=' . $Ime . '">
+                                        <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
+                                    </a>
+                                </div>    
+                                <div class="prodtext">
+                                    <a href="product.php?prod=' . $Ime . '">
+                                        <h2>' . $Ime . '</h2>
+                                        <h2>' . $Cijena . ' kn</h2>
+                                        <p>' . $Opis . '</p>
+                                    </a>
+                                </div>
+                                <div class="prodbutton">
+                                    <a href="prodchange.php?prod=' . $Ime . '"><button>Izmjeni</button></a>
+                                    <form method="post" action="delete.php?prod=' . $Ime . '&page=' . $page . '">
+                                        <button name="izbrisi">Izbriši</button>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                    ';
+                    $x++;
+                }
+            } else {
+                echo "Nema rezultata...";
             }
         }
         else {
-            echo "Nema rezultata...";
+            $x = 1;
+            if (mysqli_num_rows($stmt) != 0) {
+                foreach ($stmt as $row) {
+                    $Ime = $row['Ime'];
+                    $Cijena = $row['Cijena'];
+                    $Opis = $row['Opis'];
+                    $Slika = $row['Slika'];
+                    echo '
+                    <div class="item' . $x . '">
+                            <div class="item">
+                                <div class="prodimg">
+                                    <a href="product.php?prod=' . $Ime . '">
+                                        <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
+                                    </a>
+                                </div>    
+                                <div class="prodtext">
+                                    <a href="product.php?prod=' . $Ime . '">
+                                        <h2>' . $Ime . '</h2>
+                                        <h2>' . $Cijena . ' kn</h2>
+                                        <p>' . $Opis . '</p>
+                                    </a>
+                                </div>
+                                <div class="prodbutton">
+                                    <a href="prodchange.php?prod=' . $Ime . '"><button>Izmjeni</button></a>
+                                    <form method="post" action="delete.php?prod=' . $Ime . '&page=' . $page . '">
+                                        <button name="izbrisi">Izbriši</button>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                    ';
+                    $x++;
+                }
+            } else {
+                echo "Nema rezultata...";
+            }
         }
         ?>
     </div>

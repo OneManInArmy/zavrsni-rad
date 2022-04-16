@@ -35,7 +35,9 @@ QueryDestroy();
             $Ime = $row['Ime'];
             $Cijena = $row['Cijena'];
             $Opis = $row['Opis'];
+            $DugiOpis = $row['DugiOpis'];
             $Slika = $row['Slika'];
+            $Broj = $row["Broj"];
         }
     ?>
     <div class='picture'>
@@ -44,17 +46,22 @@ QueryDestroy();
     <div class='name'>
         <h1><?php echo $Ime; ?></h1>
     </div>
-    <div class='description'>
+    <div class='shortdescription'>
+        <p>Kratki opis:</p>
         <p><?php echo $Opis; ?></p>
     </div>
-    <div class='empty'>
-
+    <div class='longdescription'>
+        <p>Dugi opis:</p><br>
+        <p><?php echo $DugiOpis; ?></p>
+    </div>
+    <div class="number">
+        <p>Raspoloživo: <?php echo $Broj; ?></p>
     </div>
     <div class='price'>
         <p>Cijena: <?php echo $Cijena; ?> kn</p>
     </div>
     <div class='contact'>
-        <p>Kontaktirajte Kolegu</p>
+        <p>Kontakt: rtvmara@gmail.com</p>
     </div>
 </div>
 
