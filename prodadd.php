@@ -26,7 +26,6 @@ QueryDestroy();
     <table class="selection">
         <tbody>
         <tr>
-            <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
             <td><a href="webshop.php?page=1">Web Shop</a></td>
@@ -34,6 +33,8 @@ QueryDestroy();
         </tbody>
     </table>
 </div>
+<div class="spacer" style="background-image: url('slike/Website Images/productselection.svg')"></div>
+
 <div class="adminback">
     <a onclick="window.location='adminshop.php?page=1'"><span>&#8592;</span>Nazad</a>
 </div>
@@ -85,7 +86,7 @@ QueryDestroy();
             <label for="available">Raspoloživo:</label>
             <input type="number" id="available" name="available" placeholder="Raspoloživo..." form="dodaj"  required>
             <br>
-            <input type="submit" name="submit" value="Dodaj" form="dodaj" style="position:relative; top:20vh; left:45%;">
+            <input type="submit" name="submit" value="Dodaj" form="dodaj">
         </div>
     </div>
     <script>
@@ -96,6 +97,7 @@ QueryDestroy();
         <textarea name="longdesc" id="longdesc" wrap="hard" placeholder="Dugi opis ovdje..." form="dodaj" style="resize: none;"></textarea>
     </div>
 </div>
+<div class="spacer" style="background-image: url('slike/Website Images/productfooter.svg')"></div>
 <footer class="footer">
     <div style="text-align: center">
         <?php

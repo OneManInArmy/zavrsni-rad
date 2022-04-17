@@ -19,7 +19,6 @@ QueryDestroy();
     <table class="selection">
         <tbody>
         <tr>
-            <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
             <td><a href="webshop.php?page=1">Web Shop</a></td>
@@ -27,6 +26,7 @@ QueryDestroy();
         </tbody>
     </table>
 </div>
+<div class="spacer" style="background-image: url('slike/Website Images/productselection.svg')"></div>
 <div id="zafunkciju" class="prodbox">
     <?php
 
@@ -41,7 +41,7 @@ QueryDestroy();
         }
     ?>
     <div class='picture'>
-        <img src="<?php echo "slike/$Slika"; ?>" alt=".$Ime.">
+        <img src="<?php echo "slike/$Slika"; ?>" alt="<?php echo $Ime; ?>">
     </div>
     <div class='name'>
         <h1><?php echo $Ime; ?></h1>
@@ -61,9 +61,16 @@ QueryDestroy();
         <p>Cijena: <?php echo $Cijena; ?> kn</p>
     </div>
     <div class='contact'>
-        <p>Kontakt: rtvmara@gmail.com</p>
+        <p>Kontakt: radnommail@gmail.com</p>
     </div>
 </div>
-
+<div class="spacer" style="background-image: url('slike/Website Images/productfooter.svg')"></div>
+<footer class="footer">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</footer>
 </body>
 </html>

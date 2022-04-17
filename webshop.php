@@ -19,26 +19,28 @@ session_start();
     <table class="selection">
         <tbody>
         <tr>
-            <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
-            <td style="background-color: lightgray;"><a href="webshop.php?page=1">Web Shop</a></td>
+            <td><a href="webshop.php?page=1">Web Shop</a></td>
         </tr>
         </tbody>
     </table>
 </div>
+<div class="spacer" style="background-image: url('slike/Website Images/webshopselection.svg')"></div>
 <div class="okvirshop">
     <div class="filters">
         <form method="post" action="">
             <div class="trazilica">
-                <h2>Traži po imenu</h2>
+                <div class="trazilicanaslov">
+                    <p>Traži po imenu&ensp;</p>
+                </div>
                 <div class="search-container">
-                    <label for="search"></label><input type="text" placeholder="Ime uređaja..." id="search" name="search" onchange="return /[0-9a-zA-Z]/i.test(event.key)" autofocus>
+                    <label for="search"></label><input type="text" placeholder="Ime uređaja..." id="search" name="search">
                 </div>
             </div>
             <br>
             <div class="cijena">
-                <h2>Traži po cijeni</h2>
+                <p>Traži po cijeni</p>
                 <p class="sidebyside">Od</p>
                 <label for="mincijena"></label><input type="number" min="0" maxlength="8" name="mincijena" id="mincijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
                 <p class="sidebyside">Do</p>
@@ -222,6 +224,7 @@ session_start();
         ?>
     </div>
 </div>
+<div class="spacer" style="background-image: url('slike/Website Images/webshopfooter.svg')"></div>
 <footer class="footer">
 <div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
     <a style="float: right" href="adminlogin.php">Admin</a>

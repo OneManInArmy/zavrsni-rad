@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="visual"
+   viewBox="0 0 900 100"
+   width="900"
+   height="100"
+   version="1.1"
+   sodipodi:docname="indexcontentdivider.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.3"
+     inkscape:cx="449.61538"
+     inkscape:cy="-124.61538"
+     inkscape:window-width="1920"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="visual" />
+  <rect
+     x="0"
+     y="0"
+     width="900"
+     height="101.69324"
+     fill="#ff7300"
+     id="rect2"
+     style="stroke-width:0.475379" />
+  <path
+     d="m 0,18.693237 37.5,6.7 c 37.5,6.6 112.5,20 187.5,27 75,7 150,7.6 225,-0.7 75,-8.3 150,-25.7 225,-32.2 75,-6.5 150,-2.1 187.5,0 l 37.5,2.2 v 80.000003 h -37.5 c -37.5,0 -112.5,0 -187.5,0 -75,0 -150,0 -225,0 -75,0 -150,0 -225,0 -75,0 -150,0 -187.5,0 H 0 Z"
+     fill="#f6b37d"
+     stroke-linecap="round"
+     stroke-linejoin="miter"
+     id="path4" />
+</svg>

@@ -27,7 +27,6 @@ ob_start();
     <table class="selection">
         <tbody>
         <tr>
-            <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
             <td><a href="webshop.php?page=1">Web Shop</a></td>
@@ -35,6 +34,8 @@ ob_start();
         </tbody>
     </table>
 </div>
+<div class="spacer" style="background-image: url('slike/Website Images/productselection.svg')"></div>
+
 <div class="adminback">
     <a onclick="window.location='adminshop.php?page=1'"><span>&#8592;</span>Nazad</a>
 </div>
@@ -119,6 +120,7 @@ ob_start();
         document.getElementById('available').value = '<?php echo $Broj;?>';
     }
 </script>
+<div class="spacer" style="background-image: url('slike/Website Images/productfooter.svg')"></div>
 <footer class="footer">
     <div style="text-align: center">
         <?php

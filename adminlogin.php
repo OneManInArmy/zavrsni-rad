@@ -9,6 +9,7 @@
     <title>RTV-Servis Marušić Login</title>
 </head>
 <body>
+<div class="spacer" style="background-image: url('slike/Website Images/adminlogintop.svg')"></div>
     <script>
         function PreviousPage()
         {
@@ -75,6 +76,14 @@
             <input type="submit" value="Login" name="submit" form="loginform">
         </div>
     </div>
-
+<div class="spacer" style="background-image: url('slike/Website Images/adminloginbottom.svg')"></div>
+<footer class="footer">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</footer>
 </body>
 </html>

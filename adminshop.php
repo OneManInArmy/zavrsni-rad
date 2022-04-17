@@ -25,7 +25,6 @@ $page = $_GET["page"];
     <table class="selection">
         <tbody>
         <tr>
-            <td style="width: 15%"><a href="index.php"><img src="slike/servislogo.png" alt="Servis logo" class="servislogo"></a></td>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
             <td><a href="webshop.php?page=1">Web Shop</a></td>
@@ -33,13 +32,14 @@ $page = $_GET["page"];
         </tbody>
     </table>
 </div>
+<div class="spacer" style="background-image: url('slike/Website Images/webshopselection.svg')"></div>
 <div class="okvirshop">
     <div class="filters">
         <form method="post" action="">
             <div class="trazilica">
                 <h2>Traži po imenu</h2>
                 <div class="search-container">
-                    <label for="search"></label><input type="text" placeholder="Ime uređaja..." id="search" name="search" onchange="return /[0-9a-zA-Z]/i.test(event.key)" autofocus>
+                    <label for="search"></label><input type="text" placeholder="Ime uređaja..." id="search" name="search">
                 </div>
             </div>
             <br>
@@ -208,7 +208,7 @@ $page = $_GET["page"];
                     <div class="item1">
                             <div class="item" style="text-align: center">
                                 <a href="prodadd.php">
-                                    <img src="slike/addnew.png" alt="Add New">
+                                    <img src="slike/Website%20Images/addnew.png" alt="Add New">
                                 </a>
                                 <a href="prodadd.php">
                                     <h2>DODAJ NOVO</h2>
@@ -294,8 +294,9 @@ $page = $_GET["page"];
         ?>
     </div>
 </div>
+<div class="spacer" style="background-image: url('slike/Website Images/webshopfooter.svg')"></div>
 <footer class="footer">
-<div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
+    <div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
     <a style="float: right" href="logout.php">Logout</a>
 </footer>
 <?php
