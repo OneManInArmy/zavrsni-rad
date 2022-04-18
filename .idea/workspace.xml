@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/slike/Aatrox_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminlogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminlogin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminshop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cjenik.php" beforeDir="false" afterPath="$PROJECT_DIR$/cjenik.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodadd.php" beforeDir="false" afterPath="$PROJECT_DIR$/prodadd.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/prodchange.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +33,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
