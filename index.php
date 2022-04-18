@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="utf8_croatian_ci">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">     <script src="scripts.ts"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">     <script src="scripts.ts"></script>
+    <script src="scripts.ts"></script>
     <title>RTV-Servis Marušić</title>
 </head>
 <body>
@@ -38,7 +39,8 @@ QueryDestroy();
 <div class="spacer" style="background-image: url('slike/Website Images/indexcontent.svg')"></div>
 <div class="content">
     <div class="maincontent">
-        <h1>Servis digitalnih uređaja</h1>
+        <h1>Servis digitalnih uređaja Marušić</h1>
+        <br>
         <p>Ovaj servis nudi usluge popravljanja, prikupljanja i prodaje digitalnih uređaja.</p>
         <p>Radno vrijeme: 09h - 17h</p>
     </div>
@@ -52,7 +54,7 @@ QueryDestroy();
     <div class="content2">
         <h2>Adresa</h2>
         <p>Ul. Vladimira Vidrića 12</p>
-        <p>1000 Zagreb, Hrvatska</p>
+        <p>10000 Zagreb, Hrvatska</p>
     </div>
 </div>
 <?php

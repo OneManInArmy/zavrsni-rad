@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="utf8_croatian_ci">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="slike/servislogo.png">
-    <script src="scripts.ts"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">     <script src="scripts.ts"></script>
     <title>RTV-Servis Marušić Cjenik</title>
 </head>
 <body>

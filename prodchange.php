@@ -14,9 +14,10 @@ QueryDestroy();
 ob_start();
 ?>
 <head>
-    <meta charset="utf8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">
     <link rel="icon" href="slike/servislogo.png">
     <script src="scripts.ts"></script>
     <title><?php $ime =$_GET['prod'];
@@ -76,10 +77,10 @@ ob_start();
     <div class='shortdescription'>
         <label for="shortdesc">Kratiki Opis:</label>
         <br>
-        <input style="width: 60%;" id="shortdesc" name="shortdesc" type="text" placeholder="Kratki opis..." form="promjena">
+        <input id="shortdesc" name="shortdesc" type="text" placeholder="Kratki opis..." form="promjena">
     </div>
     <div class='price'>
-        <label for="price">Cijena: </label>
+        <label for="price">Cijena: </label><br>
         <input type="number" name="price" id="price" placeholder="Cijena..." form="promjena" min="1" required> kn
     </div>
     <div class='contact'>
@@ -92,14 +93,14 @@ ob_start();
                 <option value="Numark">Numark</option>
                 <option value="Clarion">Clarion</option>
                 <option value="Sony">Sony</option>
-            </datalist>
+        </datalist>
     </div>
     <div class="number">
         <div>
             <label for="available">Raspoloživo:</label>
             <input type="number" id="available" name="available" placeholder="Raspoloživo..." form="promjena" required>
             <br>
-            <input type="submit" name="submit" value="Promijeni" form="promjena" style="position:relative; top:20vh; left:45%;">
+            <input type="submit" name="submit" value="Promijeni" form="promjena">
         </div>
     </div>
     <div class="longdescription">
@@ -195,6 +196,7 @@ ob_start();
         }
         ?>
     </div>
+    <br>
 </footer>
 </body>
 </html>

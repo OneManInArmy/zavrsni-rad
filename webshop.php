@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="utf8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="slike/servislogo.png">
-    <script src="scripts.ts"></script>
-    <title>RTV-Servis Marušić Web Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
 <?php
@@ -32,19 +31,18 @@ session_start();
         <form method="post" action="">
             <div class="trazilica">
                 <div class="trazilicanaslov">
-                    <p>Traži po imenu&ensp;</p>
+                    <h2>Traži po imenu&ensp;</h2>
                 </div>
                 <div class="search-container">
                     <label for="search"></label><input type="text" placeholder="Ime uređaja..." id="search" name="search">
                 </div>
             </div>
             <br>
+            <h2>Traži po cijeni</h2>
             <div class="cijena">
-                <p>Traži po cijeni</p>
-                <p class="sidebyside">Od</p>
-                <label for="mincijena"></label><input type="number" min="0" maxlength="8" name="mincijena" id="mincijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
-                <p class="sidebyside">Do</p>
-                <label for="maxcijena"></label><input type="number" min="0" maxlength="8" name="maxcijena" id="maxcijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
+                <label class="down" for="mincijena">Od</label><input type="number" min="0" maxlength="8" name="mincijena" id="mincijena" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
+                <label class="down" for="maxcijena">Do</label><input type="number" min="0" maxlength="8" name="maxcijena" id="maxcijena" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
+                <span class="down">kn</span>
             </div>
             <br>
             <div class="orderby">
@@ -227,7 +225,7 @@ session_start();
 <div class="spacer" style="background-image: url('slike/Website Images/webshopfooter.svg')"></div>
 <footer class="footer">
 <div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
-    <a style="float: right" href="adminlogin.php">Admin</a>
+    <a style="float: right; font: 25px 'Arimo', sans-serif" href="adminlogin.php">Admin</a>
 </footer>
 <?php
 CloseCon($conn);

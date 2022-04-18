@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/addnew.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/adminloginbottom.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/adminlogintop.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/cjenikselection.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/indexcontent.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/indexcontent2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/indexcontentdivider.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/indexselection.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/productfooter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/productselection.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/webshopfooter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slike/Website Images/webshopselection.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/Aatrox_0.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminlogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminlogin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminshop.php" afterDir="false" />
@@ -25,9 +14,6 @@
       <change beforePath="$PROJECT_DIR$/prodadd.php" beforeDir="false" afterPath="$PROJECT_DIR$/prodadd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prodchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/prodchange.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slike/addnew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slike/mikser.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slike/soundtouch.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
     </list>
@@ -167,7 +153,8 @@
       <workItem from="1649956100225" duration="17000" />
       <workItem from="1650029745763" duration="14840000" />
       <workItem from="1650116742177" duration="13646000" />
-      <workItem from="1650204203153" duration="19914000" />
+      <workItem from="1650204203153" duration="20087000" />
+      <workItem from="1650290824497" duration="17847000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -288,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650137470544</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Graphic design is my passion.">
+      <created>1650227237900</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1650227237900</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +331,8 @@
     <MESSAGE value="Webshop page is now fully operational" />
     <MESSAGE value="Added user authentication, fixed some things up, adding new entry's to web-shop is the only thing left" />
     <MESSAGE value="100% functionality achieved!" />
-    <option name="LAST_COMMIT_MESSAGE" value="100% functionality achieved!" />
+    <MESSAGE value="Graphic design is my passion." />
+    <option name="LAST_COMMIT_MESSAGE" value="Graphic design is my passion." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

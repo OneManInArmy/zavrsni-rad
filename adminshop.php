@@ -8,9 +8,11 @@ if($_SESSION["loggedin"] != TRUE) {
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="utf8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@600&family=Noto+Sans:wght@500&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <title>RTV-Servis Marušić Web Shop</title>
     <link rel="icon" href="slike/servislogo.png">
     <script src="scripts.ts"></script>
     <title>RTV-Servis Marušić Admin Shop</title>
@@ -43,12 +45,11 @@ $page = $_GET["page"];
                 </div>
             </div>
             <br>
+            <h2>Traži po cijeni</h2>
             <div class="cijena">
-                <h2>Traži po cijeni</h2>
-                <p class="sidebyside">Od</p>
-                <label for="mincijena"></label><input type="number" min="0" maxlength="8" name="mincijena" id="mincijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
-                <p class="sidebyside">Do</p>
-                <label for="maxcijena"></label><input type="number" min="0" maxlength="8" name="maxcijena" id="maxcijena" class="sidebyside" style="width: 40%" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
+                <label class="down" for="mincijena">Od</label><input type="number" min="0" maxlength="8" name="mincijena" id="mincijena" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
+                <label class="down" for="maxcijena">Do</label><input type="number" min="0" maxlength="8" name="maxcijena" id="maxcijena" oninput="if (this.value.length > this.maxLength){ this.value = this.value.slice(0, this.maxLength);}">
+                <span class="down">kn</span>
             </div>
             <br>
             <div class="orderby">
@@ -297,7 +298,7 @@ $page = $_GET["page"];
 <div class="spacer" style="background-image: url('slike/Website Images/webshopfooter.svg')"></div>
 <footer class="footer">
     <div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
-    <a style="float: right" href="logout.php">Logout</a>
+    <a style="float: right; font: 25px 'Arimo', sans-serif" href="logout.php">Logout</a>
 </footer>
 <?php
 CloseCon($conn);

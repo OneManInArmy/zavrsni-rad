@@ -19,6 +19,10 @@ p
 {
     margin: 0;
 }
+h2
+{
+    margin: 0;
+}
 /*
 Micanje strelica sa input type number
 */
@@ -51,7 +55,7 @@ Navigacijski menu
     table-layout: fixed;
     text-align: center;
     border-collapse: collapse;
-    font: 500 20px 'Noto Sans', sans-serif;
+    font:  35px 'Oswald', sans-serif;
     background-color: var(--color1);
 }
 .selection td
@@ -72,16 +76,11 @@ Navigacijski menu
 /*
 Početak CSS za INDEX stranicu
 */
-/*
-Namještava veličinu slika i centrira ih
-*/
 .slideshow img{
     margin-left: auto;
     margin-right: auto;
 }
-/*
-Pozicionira element za slideshow kojeg će JavaScript aktivirati
-*/
+
 .slideshow
 {
     position: relative;
@@ -102,11 +101,35 @@ Animacija ulaska slika
 }
 
 .maincontent {grid-area: maincontent;}
+.maincontent h1
+{
+    font: 700 60px "Akshar", sans-serif;
+}
+.maincontent p
+{
+    font: 40px "Oxygen", sans-serif;
+}
 .content1 {grid-area: content1;
     margin-right: 20%;}
 .content2 {grid-area: content2;
     margin-left: 20%;}
 
+.content1 h2
+{
+    font: 700 50px "Arimo", sans-serif;
+}
+.content1 p
+{
+    font:  30px "Oxygen", sans-serif;
+}
+.content2 h2
+{
+    font: 700 50px "Arimo", sans-serif;
+}
+.content2 p
+{
+    font:  30px "Oxygen", sans-serif;
+}
 .contentdivider
 {
     grid-area: contentdivider;
@@ -121,9 +144,8 @@ Animacija ulaska slika
 {
     position: relative;
     width: 100%;
-    background-color: var(--color2);
-    font-family: Helvetica, serif;
     height: 74vh;
+    background-color: var(--color2);
     text-align: center;
     display: inline-grid;
     grid-template-areas:
@@ -158,16 +180,34 @@ Kraj CSS za CJENIK stranicu
 Početak CSS za WEBSHOP stranicu
 */
 .filters{grid-area: filters;
-    border: 2px orange solid;
+    border-right: 2px orange solid;
+}
+.filters h2
+{
+    margin-bottom: 2%;
+    font: 600 25px "Arimo", sans-serif;
 }
 .navig{grid-area: navig;
-    border-top: 2px orange solid;
-    border-right: 2px orange solid;
     border-bottom: 2px orange solid;
+    display: flex;
+    justify-content: center;
+}
+.navig form
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.navig input[type=button]
+{
+    margin-left: 5px;
+    text-align: center;
+    width: 5%;
+    height: 30px;
+    font: 18px Helvetica, sans-serif;
 }
 .okvirgrid{grid-area: okvirgrid;
-    border-right: 2px orange solid;
-    border-bottom: 2px orange solid;
+
 }
 .item1{grid-area: item1;}
 .item2{grid-area: item2;}
@@ -193,6 +233,8 @@ img {
     'filters okvirgrid okvirgrid okvirgrid'
     'filters okvirgrid okvirgrid okvirgrid'
     'filters okvirgrid okvirgrid okvirgrid';
+    border: 2px orange solid;
+    border-radius: 10px;
 }
 .okvirshop > div
 {
@@ -201,6 +243,44 @@ img {
 .sidebyside
 {
     display: inline-block;
+}
+.search-container input
+{
+    width: 65%;
+    font: 20px "Oxygen", sans-serif;
+}
+.cijena
+{
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    font: 20px "Oxygen", sans-serif;
+}
+.down
+{
+    margin-top: auto;
+}
+.cijena input
+{
+    width: 35%;
+    font: 20px "Oxygen", sans-serif;
+}
+.orderby
+{
+    font: 20px "Oxygen", sans-serif;
+}
+.orderby select
+{
+    font: 20px "Oxygen", sans-serif;
+}
+.izborpro
+{
+    font: 20px "Oxygen", sans-serif;
+}
+.izborpro input[type=checkbox]
+{
+    height: 20px;
+    margin: 0;
 }
 .pretrazi
 {
@@ -211,8 +291,16 @@ img {
 }
 .pretrazi input
 {
-    width: 20%;
+    font: 20px Verdana, sans-serif;
+    text-align: center;
+    width: 40%;
+    padding: 1%;
     margin: 5px;
+    border-radius: 5px;
+}
+.pretrazi input:hover
+{
+    background-color: lightgray;
 }
 .okvirgrid {
     display: grid;
@@ -226,22 +314,26 @@ img {
 {
     display: flex;
     flex-direction: column;
-    box-shadow: -5px 5px 5px gray;
     border: 1px gray solid;
     border-radius: 15px;
-    padding: 2px;
 }
-.prodtext p
+.item img
 {
-    margin-left: 3%;
-    margin-right: 3%;
-    padding-bottom: 5%;
-    font-family: Verdana, serif;
+    border-radius: 10px 10px 0 0;
 }
-.prodtext h2
+.item h2
 {
-    margin-left: 3%;
-    font-family: Helvetica, serif;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-bottom: 3%;
+    font: 25px "Arimo", sans-serif ;
+}
+.item p
+{
+    font: 15px "Poppins", sans-serif;
+    padding-left: 2%;
+    padding-right: 1%;
+    padding-bottom: 1%;
 }
 .prodimg img
 {
@@ -250,12 +342,17 @@ img {
 .prodbutton
 {
     align-self: center;
+    margin-top: 1%;
 }
-.navig
+.prodbutton button
 {
-    display: flex;
-    justify-content: center;
-    gap:1%;
+    font: 20px Helvetica, sans-serif;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
 }
 .footer{
     width: 100%;
@@ -270,21 +367,37 @@ Kraj CSS za WEBSHOP stranicu
 Početak CSS za PRODUCT stranicu
  */
 .adminback{
+    font: 25px 'Poppins', sans-serif;
     position: relative;
     left: 10%;
 }
 .adminback:hover{
     cursor: pointer;
 }
+.back
+{
+    font: 25px 'Poppins', sans-serif;
+    position: relative;
+    left: 10%;
+}
+.back:hover{
+    cursor: pointer;
+}
 .picture{grid-area: picture;
     padding: 1%;
+}
+.picture form input
+{
+    font: 20px 'Oxygen', sans-serif;
 }
 .name{grid-area: name;
     padding-left: 1%;
     padding-right: 1%;
+    font: 20px 'Arimo', sans-serif;
 }
 .name input{
     width: 70%;
+    font: 20px 'Oxygen', sans-serif;
 }
 .shortdescription{grid-area: shortdescription;
     padding: 1%;
@@ -292,22 +405,43 @@ Početak CSS za PRODUCT stranicu
     flex-direction: column;
     gap: 5px;
 }
+.shortdescription input
+{
+    width: 60%;
+    font: 20px 'Oxygen', sans-serif;
+}
 .price{grid-area: price;
     padding: 1%;
 }
+.price br
+{
+    display: none;
+}
+.price input
+{
+    font: 20px 'Oxygen', sans-serif;
+}
 .contact{grid-area: contact;
     padding: 1%;
+}
+.contact input
+{
+    font: 20px 'Oxygen', sans-serif;
 }
 .number{grid-area: numberavailable;
     padding: 1%;
     display: flex;
     justify-content: center;
 }
+.number input[type=number]
+{
+    font: 20px 'Oxygen', sans-serif;
+}
 .number input[type=submit]
 {
     position: relative;
-    top: 60%;
-    left: 45%;
+    top:20vh; left:45%;
+    font: 20px 'Oxygen', sans-serif;
 }
 .longdescription{grid-area: longdescription;
     padding: 1%;
@@ -319,6 +453,7 @@ Početak CSS za PRODUCT stranicu
 {
     width: 100%;
     height: 300px;
+    font: 25px 'Poppins', sans-serif;
 }
 .prodbox
 {
@@ -335,6 +470,7 @@ Početak CSS za PRODUCT stranicu
     grid-gap: 15px;
     border: 1px orange solid;
     padding: 5px;
+    font: 25px 'Poppins', sans-serif;
 }
 /*
 Kraj CSS za PRODUCT stranicu
@@ -352,6 +488,14 @@ Pocetak CSS za ADMINLOGIN stranicu
     flex-direction: column;
     border: solid 1px black;
     border-radius: 30px;
+}
+.adminbox form label
+{
+    font: 25px 'Arimo', sans-serif
+}
+.adminbox form input
+{
+    font: 25px 'Oxygen', sans-serif
 }
 .backbutton
 {
@@ -383,7 +527,7 @@ Pocetak CSS za ADMINLOGIN stranicu
     display: flex;
     justify-items: center;
     justify-content: center;
-    font: 15px Verdana;
+    font: 25px 'Oxygen', sans-serif;
     color: red;
     padding: 0 5% 5% 5%;
 }
@@ -398,6 +542,7 @@ Pocetak CSS za ADMINLOGIN stranicu
     background-color: orange;
     height: 50px;
     border-radius: 0 0 30px 30px;
+    font: 25px 'Oxygen', sans-serif
 }
 .loginbutton input:hover
 {
@@ -410,12 +555,15 @@ Kraj CSS za ADMINLOGIN stranicu
 /*
 Responsive CSS
  */
-@media only screen and (max-width: 1300px) {
-
-}
 @media only screen and (max-width: 900px) {
-/*INDEX*/
-    .contentdivider {display: block;}
+    /*INDEX*/
+    .selection {
+        font-size: 20px;
+    }
+
+    .contentdivider {
+        display: block;
+    }
 
     .content {
         background-image: none;
@@ -424,41 +572,59 @@ Responsive CSS
         'contentdivider'
         'content1'
         'content2';
+        height: 140vh;
     }
-    .maincontent {background-color: #ff7300;}
-    .content1 {margin: 0;}
-    .content2 {margin: 0;}
-/*END INDEX */
-/*WEBSHOP*/
-    .okvirshop
-    {
+
+    .maincontent {
+        background-color: #ff7300;
+    }
+
+    .content1 {
+        margin: 0;
+    }
+
+    .content2 {
+        margin: 0;
+    }
+
+    /*END INDEX */
+    /*WEBSHOP*/
+    .okvirshop {
         grid-template-columns: 1fr;
         grid-template-areas:
         'filters'
         'okvirgrid'
-        'navig'
-        ;
-    }
-    .navig
-    {
+        'navig';
         border: none;
     }
-    .filters
-    {
+
+    .navig {
         border: none;
+    }
+
+    .navig input[type=button] {
+        width: 12%;
+    }
+
+    .filters {
+        border: 2px orange solid;
+        border-radius: 10px;
         width: 100%;
     }
-    .search-container
-    {
+
+    .search-container {
         display: inline-block;
-        width: 50%;
+        width: 100%;
     }
-    .trazilicanaslov
-    {
+
+    .trazilicanaslov {
         display: inline-block;
     }
-    .okvirgrid
+    .cijena input[type=number]
     {
+        width: 30%;
+    }
+    .okvirgrid {
         border: none;
         grid-row-gap: 5vh;
         grid-template-areas:
@@ -472,5 +638,51 @@ Responsive CSS
         'item8'
         'item9';
     }
-/*END WEBSHOP*/
+
+    /*END WEBSHOP*/
+    /*PRODUCT*/
+    .prodbox {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+    'name name'
+    'picture picture'
+    'price numberavailable'
+    'contact contact'
+    'shortdescription shortdescription'
+    'longdescription longdescription';
+    }
+    .name {
+        font: 10px Helvetica, sans-serif;
+    }
+    /*END PRODUCT*/
+    /*PRODCHANGE*/
+    .name input
+    {
+        width: 100%;
+    }
+    .price br
+    {
+        display: block;
+    }
+    .price input
+    {
+        width: 50%;
+    }
+    .contact input[type=text]
+    {
+        width: 30%;
+    }
+    .number input[type=number]
+    {
+        width: 50%;
+    }
+    .number input[type=submit]
+    {
+        display: none;
+    }
+    .shortdescription input
+    {
+        width: 100%;
+    }
+    /*END PRODCHANGE*/
 }
