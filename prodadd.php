@@ -18,7 +18,7 @@ QueryDestroy();
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">
     <link rel="icon" href="slike/servislogo.png">
-    <script src="scripts.ts"></script>
+    <script src="scripts.js"></script>
     <title><?php $ime =$_GET['prod'];
         echo $ime; ?></title>
 </head>
@@ -58,7 +58,7 @@ QueryDestroy();
     </div>
     <div class='name'>
         <label>
-            <input type="text" name="prodname" id="prodname" placeholder="Ime uređaja..." form="dodaj" required>
+            <input type="text" name="prodname" id="prodname" placeholder="Ime..." form="dodaj" required>
         </label>
     </div>
     <div class='shortdescription'>
@@ -72,7 +72,7 @@ QueryDestroy();
     </div>
     <div class='contact'>
         <label for="manufacturer">Proizvođač</label>
-        <input id="manufacturer" name="manufacturer" type="text" list="proizvodaci" placeholder="Proizovđač..." form="dodaj" required>
+        <input id="manufacturer" name="manufacturer" type="text" list="proizvodaci" placeholder="Proizovđač..." form="dodaj">
         <datalist id="proizvodaci">
             <option value="Bose">Bose</option>
             <option value="Pioneer">Pioneer</option>

@@ -19,7 +19,7 @@ ob_start();
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">
     <link rel="icon" href="slike/servislogo.png">
-    <script src="scripts.ts"></script>
+    <script src="scripts.js"></script>
     <title><?php $ime =$_GET['prod'];
         echo $ime; ?></title>
 </head>
@@ -42,15 +42,15 @@ ob_start();
 </div>
 <div class="prodbox">
     <?php
-    $stmt = mysqli_query($conn, "SELECT * FROM `proizvod` WHERE Ime = '$ime';");
+    $stmt = mysqli_query($conn, "SELECT * FROM `proizvod` WHERE `Ime` = '$ime';");
     foreach ($stmt as $row) {
-        $Ime = $row['Ime'];
-        $Cijena = $row['Cijena'];
-        $Opis = $row['Opis'];
-        $DugiOpis = $row['DugiOpis'];
-        $Slika = $row['Slika'];
-        $Broj = $row['Broj'];
-        $Proizvodac = $row['Proizvodac'];
+        $Ime = strip_tags($row['Ime']);
+        $Cijena = strip_tags($row['Cijena']);
+        $Opis = strip_tags($row['Opis']);
+        $DugiOpis = strip_tags($row['DugiOpis']);
+        $Slika = strip_tags($row['Slika']);
+        $Broj = strip_tags($row['Broj']);
+        $Proizvodac = strip_tags($row['Proizvodac']);
     }
     ?>
     <div class='picture'>
@@ -65,13 +65,13 @@ ob_start();
                 };
             </script>
         <form action="" method="post" enctype="multipart/form-data" name="promjena" id="promjena">
-            Select Image Files to Upload:
+            <label for="fileToUpload">Odaberi sliku:</label>
             <input type="file" name="fileToUpload[]" id="fileToUpload" onchange="loadFile(event)" accept="image/*" form="promjena">
         </form>
     </div>
     <div class='name'>
         <label>
-            <input type="text" name="prodname" id="prodname" placeholder="Ime uređaja..." form="promjena" required>
+            <input type="text" name="prodname" id="prodname" placeholder="Ime..." form="promjena" required>
         </label>
     </div>
     <div class='shortdescription'>
@@ -85,7 +85,7 @@ ob_start();
     </div>
     <div class='contact'>
         <label for="manufacturer">Proizvođač</label>
-        <input id="manufacturer" name="manufacturer" type="text" list="proizvodaci" placeholder="Proizovđač..." form="promjena" required>
+        <input id="manufacturer" name="manufacturer" type="text" list="proizvodaci" placeholder="Proizovđač..." form="promjena">
         <datalist id="proizvodaci">
                 <option value="Bose">Bose</option>
                 <option value="Pioneer">Pioneer</option>
@@ -125,6 +125,8 @@ ob_start();
 <footer class="footer">
     <div style="text-align: center">
         <?php
+        $message = null;
+        $condition = 0;
         if(isset($_POST['submit'])) {
             $name = strip_tags($_POST['prodname']);
             $price = strip_tags($_POST['price']);
@@ -149,44 +151,47 @@ ob_start();
                     if ($check !== false) {
                         $uploadOk = 1;
                     } else {
-                        echo "<br>File is not an image.";
+                        $message .= "\\nFile is not an image.";
                         $uploadOk = 0;
                     }
 
                     // Check if file already exists
                     if (file_exists($target_file)) {
-                        echo "<br>Sorry, file already exists.";
+                        $message .= "\\nSorry, file already exists.";
                         $uploadOk = 0;
                     }
 
                     // Check file size
                     if ($_FILES["fileToUpload"]["size"][$key] > 5000000) {
-                        echo "<br>Sorry, your file is too large.";
+                        $message .= "\\nSorry, your file is too large.";
                         $uploadOk = 0;
                     }
 
                     // Allow certain file formats
                     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                         && $imageFileType != "gif") {
-                        echo "<br>Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                        $message .= "\\nSorry, only JPG, JPEG, PNG & GIF files are allowed.";
                         $uploadOk = 0;
                     }
 
                     // Check if $uploadOk is set to 0 by an error
                     if ($uploadOk == 0) {
-                        echo "<br>Sorry, your file was not uploaded.";
-                        header("location: prodchange.php?prod=$name");
+                        $message .= "\\nSorry, your file was not uploaded.";
+                        $condition = 1;
                         // if everything is ok, try to upload file
                     } else {
                         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$key], $target_file)) {
                             $filename = htmlspecialchars(basename($_FILES["fileToUpload"]["name"][$key]));
-                            echo "<br>The file " . $filename . " has been uploaded.";
+                            unlink("slike/$Slika");
+                            echo "\\nThe file " . $filename . " has been uploaded.";
+
                             $stmt = $conn->prepare("UPDATE `proizvod` SET `Slika`='$filename' WHERE `Ime` LIKE '$name'");
                             $stmt->execute();
+                            header("location: prodchange.php?prod=$name");
                         } else {
-                            echo "<br>Sorry, there was an error uploading your file.";
+                            $message .= "\\nSorry, there was an error uploading your file.";
+                            $condition = 1;
                         }
-                        header("location: prodchange.php?prod=$name");
                     }
                 }
             }
@@ -196,6 +201,13 @@ ob_start();
         }
         ?>
     </div>
+    <script>
+        if(<?php echo $condition ?> !== 0)
+        {
+            alert('<?php echo $message;?>');
+            window.location = "prodchange.php?prod=<?php echo $name; ?>";
+        }
+    </script>
     <br>
 </footer>
 </body>

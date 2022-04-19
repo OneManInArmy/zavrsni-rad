@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">
     <link rel="icon" href="slike/servislogo.png">
-    <script src="scripts.ts"></script>
+    <script src="scripts.js"></script>
     <title>RTV-Servis Marušić Login</title>
 </head>
 <body>

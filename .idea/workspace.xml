@@ -5,7 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/slike/89f1d1358e6676ff33fca90dad8a99f6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/Bose Home Speaker 450.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/CDJ-3000-top-swf-pc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/CXA5200BLicUCAGBEFKLRTSPV_3979516c3eb6156431c5f87f92c3d5fe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/DJM-750MK2-top-nnn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/DJM-V10-LF-top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/Lifestyle 135 home entertainment system.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/N-Wave360_angle_1200x750_web-624x390.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/QuietComfort 2 Acoustic Noise Cancelling headphones.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/SoundLink Mobile Speaker II.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/SoundTouch 10 wireless speaker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/SoundTouch 120 System.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/SoundTouch 520 System.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/bose_795347_1100_soundbar_700_black_1433102.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/cq5dam.web.320.320.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/djm-s7_prm_frontangle_pc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/g020Z25W-F.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/g020Z3-F.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/magnitolkin.ru.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/mikser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slike/pioneer-dj-cdj-2000-nxs2_1_DJE0005978-000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webshopreset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminlogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminlogin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminshop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cjenik.php" beforeDir="false" afterPath="$PROJECT_DIR$/cjenik.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodadd.php" beforeDir="false" afterPath="$PROJECT_DIR$/prodadd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/prodchange.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +85,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/scripts.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/prodchange.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/functions.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -146,6 +178,7 @@
       <workItem from="1650116742177" duration="13646000" />
       <workItem from="1650204203153" duration="20087000" />
       <workItem from="1650290824497" duration="17847000" />
+      <workItem from="1650376404831" duration="11412000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -273,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650227237900</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Graphic design is my passion 2 electric boogaloo.">
+      <created>1650312909839</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1650312909839</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +363,8 @@
     <MESSAGE value="Added user authentication, fixed some things up, adding new entry's to web-shop is the only thing left" />
     <MESSAGE value="100% functionality achieved!" />
     <MESSAGE value="Graphic design is my passion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Graphic design is my passion." />
+    <MESSAGE value="Graphic design is my passion 2 electric boogaloo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Graphic design is my passion 2 electric boogaloo." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

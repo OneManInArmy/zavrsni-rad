@@ -14,7 +14,7 @@ if($_SESSION["loggedin"] != TRUE) {
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">
     <title>RTV-Servis Marušić Web Shop</title>
     <link rel="icon" href="slike/servislogo.png">
-    <script src="scripts.ts"></script>
+    <script src="scripts.js"></script>
     <title>RTV-Servis Marušić Admin Shop</title>
 </head>
 <body>
@@ -29,7 +29,7 @@ $page = $_GET["page"];
         <tr>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
-            <td><a href="webshop.php?page=1">Web Shop</a></td>
+            <td><a href="webshopreset.php">Web Shop</a></td>
         </tr>
         </tbody>
     </table>
@@ -165,7 +165,7 @@ $page = $_GET["page"];
                 $query="SELECT * FROM proizvod WHERE 1";
             }
             $broj = mysqli_query($conn, $query);
-            $brojred = mysqli_num_rows($broj);
+            $brojred = mysqli_num_rows($broj)+1;
             $brojstr = ceil($brojred/9);
 
             $rangestart=($page-1)*9;
@@ -229,7 +229,7 @@ $page = $_GET["page"];
                             <div class="item">
                                 <div class="prodimg">
                                     <a href="product.php?prod=' . $Ime . '">
-                                        <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
+                                        <img src="slike/' . $Slika . '" alt="' . $Ime . '.">
                                     </a>
                                 </div>    
                                 <div class="prodtext">

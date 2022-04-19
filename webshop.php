@@ -20,7 +20,7 @@ session_start();
         <tr>
             <td><a href="index.php">Početna</a></td>
             <td><a href="cjenik.php">Cjenik</a></td>
-            <td><a href="webshop.php?page=1">Web Shop</a></td>
+            <td><a href="webshopreset.php">Web Shop</a></td>
         </tr>
         </tbody>
     </table>
@@ -203,7 +203,7 @@ session_start();
                     <div class="item' . $x . '">
                             <div class="item">
                                 <a href="product.php?prod=' . $Ime . '">
-                                    <img src="slike/' . $Slika . '" alt="Slika ' . $x . '. uređaja">
+                                    <img src="slike/' . $Slika . '" alt="' . $Ime . '.">
                                 </a>
                                 <a href="product.php?prod=' . $Ime . '">
                                     <h2>' . $Ime . '</h2>

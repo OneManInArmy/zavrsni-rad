@@ -4,7 +4,6 @@
 }
 * {
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 body, html {
     margin: 0;
@@ -103,7 +102,7 @@ Animacija ulaska slika
 .maincontent {grid-area: maincontent;}
 .maincontent h1
 {
-    font: 700 60px "Akshar", sans-serif;
+    font: 700 60px "Arimo", sans-serif;
 }
 .maincontent p
 {
@@ -319,7 +318,7 @@ img {
 }
 .item img
 {
-    border-radius: 10px 10px 0 0;
+    border-radius: 15px 15px 0 0;
 }
 .item h2
 {
@@ -370,6 +369,7 @@ Početak CSS za PRODUCT stranicu
     font: 25px 'Poppins', sans-serif;
     position: relative;
     left: 10%;
+    width: 90%;
 }
 .adminback:hover{
     cursor: pointer;
@@ -379,6 +379,7 @@ Početak CSS za PRODUCT stranicu
     font: 25px 'Poppins', sans-serif;
     position: relative;
     left: 10%;
+    width: 90%;
 }
 .back:hover{
     cursor: pointer;
@@ -649,7 +650,8 @@ Responsive CSS
     'price numberavailable'
     'contact contact'
     'shortdescription shortdescription'
-    'longdescription longdescription';
+    'longdescription longdescription'
+    ;
     }
     .name {
         font: 10px Helvetica, sans-serif;
@@ -657,6 +659,10 @@ Responsive CSS
     /*END PRODUCT*/
     /*PRODCHANGE*/
     .name input
+    {
+        width: 100%;
+    }
+    .picture
     {
         width: 100%;
     }
