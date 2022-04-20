@@ -102,7 +102,7 @@ Animacija ulaska slika
 .maincontent {grid-area: maincontent;}
 .maincontent h1
 {
-    font: 700 60px "Arimo", sans-serif;
+    font: 700 60px "Akshar", sans-serif;
 }
 .maincontent p
 {
@@ -356,8 +356,13 @@ img {
 .footer{
     width: 100%;
     padding: 10px;
+    flex-grow: 1;
     align-self: flex-end;
     background-color: var(--color1);
+}
+.footer a{
+    float: right;
+    font: 25px 'Arimo', sans-serif;
 }
 /*
 Kraj CSS za WEBSHOP stranicu
@@ -559,7 +564,7 @@ Responsive CSS
 @media only screen and (max-width: 900px) {
     /*INDEX*/
     .selection {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .contentdivider {
@@ -573,19 +578,36 @@ Responsive CSS
         'contentdivider'
         'content1'
         'content2';
-        height: 140vh;
+
     }
 
     .maincontent {
         background-color: #ff7300;
     }
+    .maincontent h1{
+        font-size: 40px;
+    }
+    .maincontent p{
+        font-size: 20px;
+    }
 
     .content1 {
         margin: 0;
     }
-
+    .content1 h2{
+        font-size: 30px;
+    }
+    .content1 p{
+        font-size: 20px;
+    }
     .content2 {
         margin: 0;
+    }
+    .content2 h2{
+        font-size: 30px;
+    }
+    .content2 p{
+        font-size: 20px;
     }
 
     /*END INDEX */
@@ -639,6 +661,9 @@ Responsive CSS
         'item8'
         'item9';
     }
+    .footer a{
+        font-size: 15px;
+    }
 
     /*END WEBSHOP*/
     /*PRODUCT*/
@@ -654,9 +679,17 @@ Responsive CSS
     ;
     }
     .name {
-        font: 10px Helvetica, sans-serif;
+        font: 15px "Arimo   ", sans-serif;
     }
     /*END PRODUCT*/
+    /*ADMINLOGIN*/
+    .adminbox{
+        margin-top: 20vh;
+        margin-bottom: 20vh;
+        left: 10%;
+        width: 80%;
+    }
+    /*END ADMINLOGIN*/
     /*PRODCHANGE*/
     .name input
     {

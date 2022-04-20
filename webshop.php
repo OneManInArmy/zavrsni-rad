@@ -224,8 +224,7 @@ session_start();
 </div>
 <div class="spacer" style="background-image: url('slike/Website Images/webshopfooter.svg')"></div>
 <footer class="footer">
-<div style="text-align: center"><?php echo $query; echo '<br>'; echo 'maxstranice: '; echo $brojstr; echo '<br>Filters:'; echo $_SESSION["filters"]?></div>
-    <a style="float: right; font: 25px 'Arimo', sans-serif" href="adminlogin.php">Admin</a>
+    <a href="adminlogin.php">Admin</a>
 </footer>
 <?php
 CloseCon($conn);

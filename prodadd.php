@@ -62,9 +62,9 @@ QueryDestroy();
         </label>
     </div>
     <div class='shortdescription'>
-        <label for="shortdesc">Kratiki Opis:</label>
+        <label for="shortdesc">Dodatno:</label>
         <br>
-        <input style="width: 60%;" id="shortdesc" name="shortdesc" type="text" placeholder="Kratki opis..." form="dodaj">
+        <input style="width: 60%;" id="shortdesc" name="shortdesc" type="text" placeholder="Dodatno..." form="dodaj">
     </div>
     <div class='price'>
         <label for="price">Cijena: </label>

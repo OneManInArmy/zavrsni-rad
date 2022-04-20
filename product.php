@@ -57,22 +57,22 @@ QueryDestroy();
         <h1><?php echo $Ime; ?></h1>
     </div>
     <div class='shortdescription'>
-        <p>Kratki opis:</p>
+        <p><strong>Dodatno:</strong></p>
         <p><?php echo $Opis; ?></p>
     </div>
     <div class='longdescription'>
-        <label for="longdescription">Dugi Opis:</label>
+        <label for="longdescription"><strong>Dugi Opis:</strong></label>
         <br>
         <textarea name="longdescription" id="longdescription" wrap="hard" readonly style="resize: none;"><?php echo $DugiOpis; ?></textarea>
     </div>
     <div class="number">
-        <p>Raspoloživo: <?php echo $Broj; ?></p>
+        <p><strong>Raspoloživo:</strong> <?php echo $Broj; ?></p>
     </div>
     <div class='price'>
-        <p>Cijena: <?php echo $Cijena; ?> kn</p>
+        <p><strong>Cijena:</strong> <?php echo $Cijena; ?> kn</p>
     </div>
     <div class='contact'>
-        <p>Kontakt: radnommail@gmail.com</p>
+        <p><strong>Naruči na:</strong> radnommail@gmail.com</p>
     </div>
 </div>
 <div class="spacer" style="background-image: url('slike/Website Images/productfooter.svg')"></div>

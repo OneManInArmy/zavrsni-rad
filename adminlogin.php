@@ -79,12 +79,7 @@
     </div>
 <div class="spacer" style="background-image: url('slike/Website Images/adminloginbottom.svg')"></div>
 <footer class="footer">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
 </footer>
 </body>
 </html>

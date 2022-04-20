@@ -75,9 +75,9 @@ ob_start();
         </label>
     </div>
     <div class='shortdescription'>
-        <label for="shortdesc">Kratiki Opis:</label>
+        <label for="shortdesc">Dodatno:</label>
         <br>
-        <input id="shortdesc" name="shortdesc" type="text" placeholder="Kratki opis..." form="promjena">
+        <input id="shortdesc" name="shortdesc" type="text" placeholder="Dodatno..." form="promjena">
     </div>
     <div class='price'>
         <label for="price">Cijena: </label><br>

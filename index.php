@@ -39,10 +39,11 @@ QueryDestroy();
 <div class="spacer" style="background-image: url('slike/Website Images/indexcontent.svg')"></div>
 <div class="content">
     <div class="maincontent">
-        <h1>Servis digitalnih uređaja Marušić</h1>
+        <h1>Servis elektroničkih uređaja Marušić</h1>
         <br>
         <p>Ovaj servis nudi usluge popravljanja, prikupljanja i prodaje digitalnih uređaja.</p>
-        <p>Radno vrijeme: 09h - 17h</p>
+        <p>Radno vrijeme:</p>
+        <p>Ponedjeljak - Petak: 09h - 17h</p>
     </div>
     <div class="contentdivider"></div>
     <div class="content1">
