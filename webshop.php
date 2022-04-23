@@ -201,7 +201,7 @@ session_start();
                 echo
                     '
                     <div class="item' . $x . '">
-                            <div class="item">
+                            <div class="item shadow">
                                 <a href="product.php?prod=' . $Ime . '">
                                     <img src="slike/' . $Slika . '" alt="' . $Ime . '.">
                                 </a>

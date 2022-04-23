@@ -102,7 +102,7 @@ Animacija ulaska slika
 .maincontent {grid-area: maincontent;}
 .maincontent h1
 {
-    font: 700 60px "Akshar", sans-serif;
+    font: 700 60px "Verdana", sans-serif;
 }
 .maincontent p
 {
@@ -159,19 +159,34 @@ Animacija ulaska slika
 /*
 Kraj CSS za INDEX stranicu
 */
-
 /*
 Početak CSS za CJENIK stranicu
 */
-.uvod
+.cjenik
 {
     position: relative;
-    width: 60%;
     left: 20%;
-    text-align: center;
-    font: 20px 'Helvetica', sans-serif;
+    width: 60%;
 }
-
+.cjenik table
+{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+.cjenik table th
+{
+    text-align: left;
+    font: 30px "Arimo", sans-serif;
+}
+.cjenik table td
+{
+    font: 25px "Oxygen", sans-serif;
+}
+.center
+{
+    text-align: center !important;
+}
 /*
 Kraj CSS za CJENIK stranicu
 */
@@ -308,6 +323,9 @@ img {
     'item4 item5 item6'
     'item7 item8 item9';
     grid-gap: 25px;
+}
+.shadow{
+    box-shadow: gray 5px 5px 10px 3px;
 }
 .item
 {
@@ -611,6 +629,29 @@ Responsive CSS
     }
 
     /*END INDEX */
+    /*CJENIK*/
+    .cjenik
+    {
+        position: relative;
+        left: 10%;
+        width: 80%;
+    }
+    .cjenik table
+    {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 20px;
+    }
+    .cjenik table th
+    {
+        text-align: left;
+        font: 20px "Arimo", sans-serif;
+    }
+    .cjenik table td
+    {
+        font: 15px "Oxygen", sans-serif;
+    }
+    /*END CJENIK*/
     /*WEBSHOP*/
     .okvirshop {
         grid-template-columns: 1fr;
