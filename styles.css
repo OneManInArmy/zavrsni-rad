@@ -479,6 +479,10 @@ Početak CSS za PRODUCT stranicu
     height: 300px;
     font: 25px 'Poppins', sans-serif;
 }
+.longdescription input[type=submit]{
+    font: 20px 'Oxygen', sans-serif;
+    display: none;
+}
 .prodbox
 {
     position: relative;
@@ -759,6 +763,12 @@ Responsive CSS
     .number input[type=submit]
     {
         display: none;
+    }
+    .longdescription input[type=submit]{
+        display: block;
+        margin-top: 2%;
+        width: 50%;
+        align-self: center;
     }
     .shortdescription input
     {

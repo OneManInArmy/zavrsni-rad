@@ -107,6 +107,7 @@ ob_start();
         <label for="longdesc">Dugi Opis:</label>
         <br>
         <textarea name="longdesc" id="longdesc" wrap="hard" placeholder="Dugi opis ovdje..." form="promjena" style="resize: none;"><?php echo $DugiOpis; ?></textarea>
+        <input type="submit" name="submit" value="Promijeni" form="promjena">
     </div>
 </div>
 <script>

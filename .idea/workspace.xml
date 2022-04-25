@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fb7e989c-85f5-49f2-90f4-7ce786505228" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cjenik.php" beforeDir="false" afterPath="$PROJECT_DIR$/cjenik.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminshop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/prodchange.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webshop.php" beforeDir="false" afterPath="$PROJECT_DIR$/webshop.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +153,8 @@
       <workItem from="1650472769805" duration="3202000" />
       <workItem from="1650549400551" duration="2540000" />
       <workItem from="1650662496023" duration="601000" />
-      <workItem from="1650722696118" duration="3501000" />
+      <workItem from="1650722696118" duration="4222000" />
+      <workItem from="1650909662521" duration="1519000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1641301530754</created>
@@ -302,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650485188484</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="It has been done!">
+      <created>1650728994875</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1650728994875</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +363,8 @@
     <MESSAGE value="Graphic design is my passion 2 electric boogaloo." />
     <MESSAGE value="Finishing up" />
     <MESSAGE value="Finishing touches" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing touches" />
+    <MESSAGE value="It has been done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="It has been done!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
