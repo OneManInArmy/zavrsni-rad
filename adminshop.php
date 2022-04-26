@@ -12,7 +12,6 @@ if($_SESSION["loggedin"] != TRUE) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">
-    <title>RTV-Servis Marušić Web Shop</title>
     <link rel="icon" href="slike/servislogo.png">
     <script src="scripts.js"></script>
     <title>RTV-Servis Marušić Admin Shop</title>

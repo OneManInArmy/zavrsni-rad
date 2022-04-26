@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="slike/servislogo.png">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&family=Arimo:wght@600&family=Bebas+Neue&family=Noto+Sans:wght@500&family=Oswald&family=Oxygen&family=Poppins&display=swap" rel="stylesheet">
+    <title>RTV-Servis Marušić Web Shop</title>
 </head>
 <body>
 <?php
