@@ -1,0 +1,2 @@
+SELECT * FROM proizvod WHERE 1 LIMIT 0 , 9
+SELECT * FROM proizvod WHERE Ime LIKE '%' AND Cijena BETWEEN 0 AND 999999999 AND Proizvodac IN ( SELECT Proizvodac FROM proizvod ) ORDER BY ID LIMIT 0 , 9
