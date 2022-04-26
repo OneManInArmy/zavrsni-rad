@@ -160,7 +160,7 @@ QueryDestroy();
                             $change->execute();
                             header("location: prodadd.php");
                         } else {
-                            echo "<br>Sorry, there was an error uploading your file.";
+                            echo "<br>Sorry, there was an error uploading your file and information.";
                         }
                     }
                 }
